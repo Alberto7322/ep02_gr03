@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Musica</title>
+<link rel="stylesheet" href="style/entrega1.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+    <div class="columna_izquierda">
+        <div class="encabezado_izquierda">
+            <img src="images/spotify_icon.png" alt="icon" class="imagen3">
+            <div class="titulo">
+                <h1 ><a href="entrega1.html" >UC3Musica</a></h1>
+            </div>
+        </div>
+        <div class="cuerpo_izquierda">
+            <div class="menu">
+                <div class="menu_option">
+                    <div class="icono">
+                        <img src="images/natos.jpg" alt="cantante1" class="imagen2">
+                    </div>
+                    <div class="texto_menu">
+                        <p class="texto">Hijos de la ruina. Natos y waor</p>
+                    </div>
+                </div>
+                <div class="menu_option">
+                    <div class="icono">
+                        <img src="images/sech2.jpg" alt="cantante1" class="imagen2">
+                    </div>
+                    <div class="texto_menu">
+                        <p class="texto">Sueños. Sech</p>
+                    </div>
+                </div>
+                <div class="menu_option">
+                    <div class="icono">
+                        <img src="images/costa.jpg" alt="cantante1" class="imagen2">
+                    </div>
+                    <div class="texto_menu">
+                        <p class="texto">Lento. Fernando Costa</p>
+                    </div>
+                </div>
+                <div class="menu_option">
+                    <div class="icono">
+                        <img src="images/3am.jpg" alt="cantante1" class="imagen2">
+                    </div>
+                    <div class="texto_menu">
+                        <p class="texto">Eminem. 3AM</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="links">
+                <div class="link">
+                    <a href="https://www.spotify.org/" class="Política">Política de privacidad</a>
+                </div>
+                <div class="link">
+                    <a href="https://www.spotify.org/" class="Cookies">Cookies</a>
+                </div>
+                
+            </div>
+            
+
+        </div>
+            
+
+        
+    </div>
+    <div class="columna_derecha">
+        <div class="modal" id="mi-perfil">
+            <span onclick="closeFormMiPerfil()" class="close" title="Close Modal">&times;</span>
+            <form class="modal-content" method="post" action="#" onsubmit="return actualizarValues(this)">
+              <div class="container">
+                <h1>Mi Perfil</h1>
+                <p>Estos son los atributos de su perfil.</p>
+                <hr>
+                <label for="usuario"><b>Nombre de usuario</b></label>
+                <input type="text" id="usuariovariable" value="" placeholder="Introduzca su nombre de usuario" name="usuario" required>
+          
+                <label for="psw"><b>Contraseña</b></label>
+                <a id="contraseñainvariable" class="contraseñainvariable">contraseña</a>
+        
+                <label for="nombreapellidos"><b>Nombre y Apellidos</b></label>
+                <a id="nombreapellidosinvariable" class="nombreapellidosinvariable">nombreapellidos</a>
+          
+                <label for="email"><b>Email</b></label>
+                <a id="emailinvariable" class="emailinvariable">email</a>
+          
+                <label for="fechadenacimiento"><b>Fecha de nacimiento</b></label>
+                <a id="fechadenacimientoinvariable" class="fechadenacimientoinvariable">fecha de nacimiento</a>
+          
+                <label for="fotodeperfil"><b>Foto de perfil</b></label>
+                <input type="file" placeholder="Introduzca una foto de perfil (opcional)" name="fotodeperfil" id="fotodeperfilcambiada">
+
+                <label for="desplegable">Me interesa...</label> <br/>
+                <select class="desplegable" id="desplegablevariable" name="desplegable">
+                  <option value="" selected="selected">- selecciona una -</option>
+                  <option value="turismofutbolístico">Turismo  futbolístico</option>
+                  <option value="turismoreligioso">Turismo religioso</option>
+                  <option value="turismogastronómico">Turismo gastronómico</option>
+                  <option value="turismocultural">Turismo cultural</option>
+                  <option value="otro">Otro</option>
+                </select>
+            
+                <div class="clearfix">
+                  <button type="reset" class="signupbtn">Borrar</button>
+                  <button type="submit" class="signupbtn">Guardar</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+        
+        
+            
+        </div>
+    </div>
+    <div class="pie">
+        <p class="texto_pie">Usa la web que viene bien</p>
+    </div>

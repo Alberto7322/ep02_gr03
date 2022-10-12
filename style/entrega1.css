@@ -1,0 +1,508 @@
+body{
+    background-color: limegreen;
+   
+}
+.columna_derecha{
+    float:right;
+    width:75%;
+    font-size: 40px;
+    top:0px;
+    right:0px;
+    background-color:limegreen;
+    
+}
+.encabezado_derecha{
+    width:75%;
+    height:80px;
+    position:fixed;
+    background-color:green;
+    top:0px;
+    
+}
+.botones{
+    width:30%;
+    height:100%;
+    float:right;
+    margin-right:5%;
+}
+.boton_1{
+    text-decoration: none;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Courier';
+    font-weight: 200;
+    font-size: 23px;
+    font-style: italic;
+    color: #ffffff;
+    background-color: #a1fb8a;
+    border-radius: 15px;
+    border: 3px double #006505;
+    
+}
+
+.boton_2{
+    text-decoration: none;
+    padding: 3px;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: 'Courier';
+    font-weight: 200;
+    font-size: 23px;
+    font-style: italic;
+    color: #ffffff;
+    background-color: #a1fb8a;
+    border-radius: 15px;
+    border: 3px double #006505;
+}
+
+.usuario{
+    background-color: red;
+    float:right;
+    height:100%;
+    column-count: 2;
+    right:0px;
+}
+.inicio{
+    background-color:aqua;
+}
+.registro{
+    background-color: aquamarine;
+}
+.cuerpo_derecha{
+    margin-top:8%;
+    margin-bottom:20%;
+    background-color:limegreen;
+    left:2%;
+}
+.columna_izquierda{
+    float:left;
+    top:0px;
+    left:0px;
+    width:26%;
+    font-size:40px;
+    height:90%;
+    background-color:limegreen;
+    position:fixed;
+}
+.encabezado_izquierda{
+    height:80px;
+    font-size: large;
+    background-color: green;
+    margin-left:3%;
+}
+.titulo{
+    height:100%;
+    width:70%;
+    float:right;
+    font-style:italic;
+
+}
+
+    
+.imagen3{
+    height:100%;
+    width:auto;
+}
+
+.cuerpo_izquierda{
+    margin-top:5%;
+    margin-left:3%;
+    background-color: limegreen;
+    height:90%;
+}
+
+.cantantes{
+    width: 17%;
+    height:50%;
+}
+.tipo_musica{
+    width:50%;
+    font-family:'monaco';
+    font-size:60px;
+    margin-left:5%;
+    background-color:#006505;
+    border-radius: 15px;
+    text-align:center;
+    border: 3px double black;
+}
+.reggaeton{
+    height:450px;
+    display:grid;
+    grid-template-columns: 18% 18% 18% 18% 18%;
+    column-gap: 2%;
+    margin-left: 3%;
+    margin-top: 2%;
+    margin-bottom: 50px;
+    
+}
+
+.reproductor{
+    opacity: 0;
+    width:100%;
+    height:100%;
+}
+.reproductor2{
+    opacity: 1;
+    width:100%;
+    height:100%;
+}
+.badbunny{
+    height:60%;
+    background-image: url("../images/badbunny.jpg");
+    background-size:cover;
+    
+}
+.badbunny2{
+    height:40%;
+    background-image: url("../images/badbunny.jpg");
+    background-size:cover;
+    
+}
+.balvin{
+    height:60%;
+    background-image: url("../images/balvin.jpg");
+    background-size:cover;
+    
+}
+.balvin2{
+    height:40%;
+    background-image: url("../images/balvin.jpg");
+    background-size:cover;
+    
+}
+.ozuna{
+    height:60%;
+    background-image: url("../images/ozuna.jpg");
+    background-size:cover;
+    
+}
+.ozuna2{
+    height:40%;
+    background-image: url("../images/ozuna.jpg");
+    background-size:cover;
+    
+}
+.sech{
+    height:60%;
+    background-image: url("../images/sech.jpg");
+    background-size:cover;
+    
+}
+.sech2{
+    height:40%;
+    background-image: url("../images/sech.jpg");
+    background-size:cover;
+    
+}
+.nickyjam{
+    height:60%;
+    background-image: url("../images/nickyjam.jpg");
+    background-size:cover;
+    
+}
+.nickyjam2{
+    height:40%;
+    background-image: url("../images/nickyjam.jpg");
+    background-size:cover;
+    
+}
+.tiago{
+    height:60%;
+    background-image: url("../images/tiago.jpg");
+    background-size:cover;
+    
+}
+.tiago2{
+    height:40%;
+    background-image: url("../images/tiago.jpg");
+    background-size:cover;
+    
+}
+.nicole{
+    height:60%;
+    background-image: url("../images/nicole.jpg");
+    background-size:cover;
+    
+}
+.nicole2{
+    height:40%;
+    background-image: url("../images/nicole.jpg");
+    background-size:cover;
+    
+}
+.trueno{
+    height:60%;
+    background-image: url("../images/trueno.jpg");
+    background-size:cover;
+    
+}
+.trueno2{
+    height:40%;
+    background-image: url("../images/trueno.jpg");
+    background-size:cover;
+    
+}.duki{
+    height:60%;
+    background-image: url("../images/duki.jpg");
+    background-size:cover;
+    
+}
+.duki2{
+    height:40%;
+    background-image: url("../images/duki.jpg");
+    background-size:cover;
+    
+}.bizarrap{
+    height:60%;
+    background-image: url("../images/bizarrap.jpg");
+    background-size:cover;
+    
+}
+.bizarrap2{
+    height:40%;
+    background-image: url("../images/bizarrap.jpg");
+    background-size:cover;
+    
+}
+.aitana{
+    height:60%;
+    background-image: url("../images/aitana.jpg");
+    background-size:cover;
+    
+}
+.aitana2{
+    height:40%;
+    background-image: url("../images/aitana.jpg");
+    background-size:cover;
+    
+}
+.orozco{
+    height:60%;
+    background-image: url("../images/orozco.jpg");
+    background-size:cover;
+    
+}
+.orozco2{
+    height:40%;
+    background-image: url("../images/orozco.jpg");
+    background-size:cover;
+    
+}
+.melendi{
+    height:60%;
+    background-image: url("../images/melendi.jpg");
+    background-size:cover;
+    
+}
+.melendi2{
+    height:40%;
+    background-image: url("../images/melendi.jpg");
+    background-size:cover;
+    
+}.pablo{
+    height:60%;
+    background-image: url("../images/pablo.jpg");
+    background-size:cover;
+    
+}
+.pablo2{
+    height:40%;
+    background-image: url("../images/pablo.jpg");
+    background-size:cover;
+    
+}.beret{
+    height:60%;
+    background-image: url("../images/beret.jpg");
+    background-size:cover;
+    
+}
+.beret2{
+    height:40%;
+    background-image: url("../images/beret.jpg");
+    background-size:cover;
+    
+}
+.texto{
+    font-size: large;
+    margin-top:10%;
+}
+.menu{
+    width:100%;
+    height:40%;
+}
+.menu_option{
+    column-count: 2;
+    column-width:10%;
+    height:25%;
+    border-style:solid;
+    border-width:1px;
+    border-color:black;
+
+}
+.imagen2{
+    width:100%;
+    height: 100%;
+}
+.icono{
+    width:50%;
+    height:100%;
+
+}
+
+.texto_menu{
+    width:100%;
+    height:100%;
+    margin-right:5%;
+}
+.links{
+    height:45%;
+    background-color:limegreen;
+    margin-top:60%;
+}
+.link{
+    font-size:xx-large;
+    border-style:solid;
+    border-width:1px;
+    border-color:black;
+}
+.pie{
+    bottom:0px;
+    left:0px;
+    background-color:green;
+    position:fixed;
+    width:100%;
+    height:10%;  
+}
+.texto_pie{
+    text-align:center;
+    font-size:200%;
+    top:2%;
+}
+
+img:hover {
+    border-radius: 20px;
+}
+@media screen and (max-width: 768px) {
+    .encabezado_derecha{
+        width:60%;
+        height:70px;
+        margin-left:39%;
+    }
+    .botones{
+        width:60%;
+    }
+    .encabezado_izquierda{
+        height:70px;
+        width:40%;
+        position:fixed;
+        margin-left:0;
+        top:0px;
+    }
+    .columna_izquierda{
+        margin-top:0px;
+        width:100%;
+        position:relative;
+    }
+    .cuerpo_izquierda{
+        margin-top:15%;
+        height:800px;
+    }
+    .columna_derecha{
+        width:100%;
+        
+    }
+    .menu{
+        height:600px;
+    }
+    .menu_option{
+        height:140px;
+    }
+    .icono{
+        width:60%;
+    }
+
+    .boton_1{
+        font-size: 20px;
+        border-radius: 12px;
+        
+    }
+    
+    .boton_2{
+        font-size: 20px;
+        border-radius: 12px;
+    }
+    .links{
+        height: 80px;
+        margin-top:100px;
+    }
+    
+    .reggaeton{
+        height:900px;
+        grid-template-columns: 30% 30% 30%;
+        
+    }
+    
+    
+
+    
+}
+@media screen and (max-width: 600px) {
+    .boton_1{
+        font-size: 15px;
+    }
+    
+    .boton_2{
+        font-size: 15px;
+    }
+    .reggaeton{
+        height:1200px;
+        grid-template-columns: 45% 45% ;
+        
+    }
+    .encabezado_derecha{
+        width:55%;
+        margin-left:45%;
+    }
+    .encabezado_izquierda{
+        width:45%;
+    }
+    
+    
+}
+@media screen and (max-width: 450px) {
+    .boton_1{
+        font-size: 10px;
+    }
+    
+    .boton_2{
+        font-size: 10px;
+    }
+    .reggaeton{
+        height:2500px;
+        grid-template-columns: 90%;
+        
+    }
+    .encabezado_derecha{
+        width:40%;
+        margin-left:60%;
+    }
+    .encabezado_izquierda{
+        width:60%;
+    }
+    .tipo_musica{
+        width:90%;
+    }
+    .cuerpo_izquierda{
+        margin-top:25%;
+
+    }
+    .botones{
+        width:100%;
+    }
+    .titulo{
+        font-size:15px;
+    }
+    
+    
+}
