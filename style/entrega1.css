@@ -383,6 +383,15 @@ body{
 img:hover {
     border-radius: 20px;
 }
+.iniciosesion{
+    width:50%;
+    padding-left:300px;
+    
+}
+.crearsesion{
+    width:50%;
+    padding-left:300px;
+}
 @media screen and (max-width: 768px) {
     .encabezado_derecha{
         width:60%;
