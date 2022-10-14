@@ -11,7 +11,7 @@
         <div class="encabezado_izquierda">
             <img src="images/spotify_icon.png" alt="icon" class="imagen3">
             <div class="titulo">
-                <h1 ><a href="entrega1.html" >UC3Musica</a></h1>
+                <h1 ><a href="entrega2.html" >UC3Musica</a></h1>
             </div>
         </div>
         <div class="cuerpo_izquierda">
@@ -69,10 +69,23 @@
     <div class="columna_derecha">
 
         <div class="encabezado_derecha">
-            <div class="botones">
-                <a href="login.html" class="boton_1" id="signup">LOG IN</a>
-                <a href="registrarse.html" class="boton_2">SIGN UP</a>
-            </div>
+            <img src="a.jpg" class="fotoperfil" id="fotoperfil">
+            <button class="boton-opciones" onclick="abrirListaOpciones()" id="boton-opciones">Opciones</button>
+            <div class="opciones-popup" id="opciones">
+                <form action="#" class="opciones-contenedor">
+                  <h1>Opciones</h1>
+                  <button class="mi-perfil" onclick="openFormMiPerfil()">Mi Perfil</button>
+                  <button class="boton-mis-experiencias" onclick="openFormMisExperiencias()">Mis Experiencias</button>
+                  <button class="cerrar-sesión" onclick="abrirOpcionesCerrarSesion()">Cerrar Sesión</button>
+                </form>
+              </div>
+              <div class="opciones-cerrar-sesión" id="opciones-cerrar-sesión">
+                <form action="#" class="opciones-cerrar-sesión-contenedor">
+                  <h1>¿Quieres cerrar sesión?</h1>
+                  <button class="cerrar-sesión" onclick="cerrarSesion()">Sí</button>
+                  <button class="opciones-cerrar" onclick="cerrarOpcionesCerrarSesion()">No</button>
+                </form>
+              </div>
         </div>
 
         <div class="cuerpo_derecha">
@@ -234,4 +247,3 @@
     </div>
 
 </body>
-

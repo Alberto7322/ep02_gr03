@@ -75,14 +75,19 @@
             </div>
         </div>
         <div class="cuerpo_derecha">
-            <div class="iniciosesion">
-                <form name="Form2">
-                    <input id="email" type="email" placeholder="Email" class="search"/><br><br>
-                    <input id="password" type="password" placeholder="Password" class="search"/><br><br>
-                    <label class="check_text"><input id="check" type="checkbox"> He leído y acepto los <a href="">términos y condiciones</a></label><br><br>
-                    <input onclick="iniciaSesion()" type="submit" class="submit"/>
+            <div class="modal" id="id02">
+                <form class="modal-content" method="post" action="#" onsubmit="return validarDatos(this)">
+                  <div class="container">
+                    <label for="email">Correo Electrónico</label>
+                    <input type="email" placeholder="Introduzca email" name="email" required>
+                    <br>
+                    <label for="psw">Contraseña</label>
+                    <input type="password" placeholder="Introduzca contraseña" name="psw" required>
+                    <br>
+                    <button type="submit" class="btnsubmit">Login</button>
+                  </div>
                 </form>
-            </div>  
+            </div> 
         </div>
     </div>
     <div class="pie">
