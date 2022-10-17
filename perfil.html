@@ -4,6 +4,7 @@
 <title>Musica</title>
 <link rel="stylesheet" href="style/entrega1.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="javascript/javascript.js"></script>
 </head>
 <body>
     <div class="columna_izquierda">
@@ -68,23 +69,20 @@
     <div class="columna_derecha">
 
         <div class="encabezado_derecha">
-            <div class="botones">
-                <a href="login.html" class="boton_1">LOG IN</a>
-                <a href="https://www.spotify.com/us/signup" class="boton_2">SIGN UP</a>
-            </div>
+            <img src="a.jpg" class="fotoperfil" id="fotoperfil">
+            <button class="boton-opciones" onclick="abrirListaOpciones()" id="boton-opciones">Opciones</button>
+            <div class="opciones-popup" id="opciones">
+                <form action="#" class="opciones-contenedor">
+                  <h1 class="opciones-titulo">Opciones</h1>
+                  <button class="mi-perfil" onclick="location.href='perfil.html'">Mi Perfil</button>
+                  <button class="boton-mis-experiencias" onclick="location.href='cuenta.html'">Mi Cuenta</button>
+                  <button class="cerrar-sesión" onclick="location.href='entrega2.html'">Cerrar Sesión</button>
+                </form>
+              </div>
         </div>
         <div class="cuerpo_derecha">
             <form action="contact.php" method="post"> 
-                <div class="elem-group"> 
-                    <label for="name">Nombre</label> 
-                    <input type="text" id="name" name="visitor_name" placeholder="Nombre de ejemplo" pattern=[A-Z\sa-z]{3,20} required> 
-                </div> 
-                <div class="elem-group"> 
-                    <label for="email">Correo electrónico</label> 
-                    <input type="email" id="email" name="visitor_email" placeholder="ejemplo@email.com" required> 
-                </div> 
                 
-                <button type="submit">Enviar mensaje</button>
             </form>
         
             

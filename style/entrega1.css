@@ -396,6 +396,38 @@ img:hover {
     padding-top: 2%;
     padding-left:10%;
 }
+.opciones-popup{
+    display: none;
+    position: fixed;
+    top: 50px;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+}
+.opciones-contenedor{
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+.opciones-cerrar-sesión{
+    display: none;
+    position: fixed;
+    top: 50px;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+}
+  
+.opciones-cerrar-sesión-contenedor{
+    max-width: 300px;
+    padding: 10px;
+    background-color: white;
+}
+.opciones-titulo{
+    font-size: x-large;
+}
+
+  
 @media screen and (max-width: 768px) {
     .encabezado_derecha{
         width:60%;

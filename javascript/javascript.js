@@ -44,7 +44,7 @@ function validarDatos(form){
     if (checkCookie(email) == false){
         if (checkPassword(email, psw)){
             alert("Has iniciado sesión correctamente");
-            window.location.href = "entrega2.html";
+            window.location.href = "entrega3.html";
             console.log(window.location.href)
             
             
@@ -68,3 +68,58 @@ function checkPassword(email, psw){
         return false;
     }
 }
+function abrirListaOpciones(){
+    document.getElementById("opciones").style.display = "block";
+}
+
+function cerrarListaOpciones(){
+    document.getElementById("opciones").style.display = "none";
+}
+function abrirOpcionesCerrarSesion(){
+    document.getElementById("opciones").style.display = "none";
+    document.getElementById("opciones-cerrar-sesión").style.display = "block";
+}
+
+function cerrarOpcionesCerrarSesion(){
+    document.getElementById("opciones-cerrar-sesión").style.display = "none";
+    document.getElementById("opciones").style.display = "block";
+}
+function actualizarValues(form){
+    let array = [form.usuariovariable.value, getContraseña(), getNombreApellidos(), emailiniciado, getFechaDeNacimiento(), stringfotoinsertada];
+    var strForm = serializarArray(array);
+    sessionStorage.setItem(emailiniciado, strForm, 30);
+}
+function getNombreUsuario(){
+    let cookie = sessionStorage.getItem(emailiniciado);
+    let array = cookie.split(",");
+    var usuario = array[0];
+    return usuario
+}
+
+function getContraseña(){
+    let cookie = sessionStorage.getItem(emailiniciado);
+    let array = cookie.split(",");
+    var contraseña = array[1];
+    return contraseña
+}
+
+function getFechaDeNacimiento(){
+    let cookie = sessionStorage.getItem(emailiniciado);
+    let array = cookie.split(",");
+    let fechadenacimiento = array[4];
+    return fechadenacimiento
+}
+
+function getNombreApellidos(){
+    let cookie = sessionStorage.getItem(emailiniciado);
+    let array = cookie.split(",");
+    let nombreapellidos = array[2];
+    return nombreapellidos
+}
+
+function getStringFotoInsertada(){
+    let cookie = sessionStorage.getItem(emailiniciado);
+    let array = cookie.split(",");
+    let stringfoto = array[5];
+    return stringfoto
+} 

@@ -73,17 +73,10 @@
             <button class="boton-opciones" onclick="abrirListaOpciones()" id="boton-opciones">Opciones</button>
             <div class="opciones-popup" id="opciones">
                 <form action="#" class="opciones-contenedor">
-                  <h1>Opciones</h1>
-                  <button class="mi-perfil" onclick="openFormMiPerfil()">Mi Perfil</button>
-                  <button class="boton-mis-experiencias" onclick="openFormMisExperiencias()">Mis Experiencias</button>
-                  <button class="cerrar-sesión" onclick="abrirOpcionesCerrarSesion()">Cerrar Sesión</button>
-                </form>
-              </div>
-              <div class="opciones-cerrar-sesión" id="opciones-cerrar-sesión">
-                <form action="#" class="opciones-cerrar-sesión-contenedor">
-                  <h1>¿Quieres cerrar sesión?</h1>
-                  <button class="cerrar-sesión" onclick="cerrarSesion()">Sí</button>
-                  <button class="opciones-cerrar" onclick="cerrarOpcionesCerrarSesion()">No</button>
+                  <h1 class="opciones-titulo">Opciones</h1>
+                  <button class="mi-perfil" onclick="location.href='perfil.html'">Mi Perfil</button>
+                  <button class="boton-mis-experiencias" onclick="location.href='cuenta.html'">Mi Cuenta</button>
+                  <button class="cerrar-sesión" onclick="location.href='entrega2.html'">Cerrar Sesión</button>
                 </form>
               </div>
         </div>
