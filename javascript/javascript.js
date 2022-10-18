@@ -17,7 +17,7 @@ function checkCookie(campo) {
 function storeValues(form){
     console.log(form.email.value)
     if (checkCookie(form.email.value)){
-        let array = [form.usuario.value, form.psw.value, form.nombreapellidos.value, form.email.value, form.fechadenacimiento.value];
+        let array = [form.usuario.value, form.psw.value, form.nombreapellidos.value, form.email.value, form.fechadenacimiento.value,form.fotodeperfil.value];
         var strForm = serializarArray(array);
         sessionStorage.setItem(form.email.value, strForm);
         return true;
@@ -45,6 +45,7 @@ function validarDatos(form){
         if (checkPassword(email, psw)){
             alert("Has iniciado sesión correctamente");
             window.location.href = "entrega3.html";
+            sessionStorage.setItem("emailiniciado",email)
             console.log(window.location.href)
             
             
@@ -85,11 +86,14 @@ function cerrarOpcionesCerrarSesion(){
     document.getElementById("opciones").style.display = "block";
 }
 function actualizarValues(form){
-    let array = [form.usuariovariable.value, getContraseña(), getNombreApellidos(), emailiniciado, getFechaDeNacimiento(), stringfotoinsertada];
+    var emailiniciado =sessionStorage.getItem("emailiniciado")
+    let array = [form.usuariovariable.value, form.contraseñavariable.value, form.nombrevariable.value, emailiniciado,form.fechavariable.value];
     var strForm = serializarArray(array);
     sessionStorage.setItem(emailiniciado, strForm, 30);
+    console.log(emailiniciado)
 }
 function getNombreUsuario(){
+    var emailiniciado =sessionStorage.getItem("emailiniciado")
     let cookie = sessionStorage.getItem(emailiniciado);
     let array = cookie.split(",");
     var usuario = array[0];
@@ -97,6 +101,7 @@ function getNombreUsuario(){
 }
 
 function getContraseña(){
+    var emailiniciado =sessionStorage.getItem("emailiniciado")
     let cookie = sessionStorage.getItem(emailiniciado);
     let array = cookie.split(",");
     var contraseña = array[1];
@@ -104,6 +109,7 @@ function getContraseña(){
 }
 
 function getFechaDeNacimiento(){
+    var emailiniciado =sessionStorage.getItem("emailiniciado")
     let cookie = sessionStorage.getItem(emailiniciado);
     let array = cookie.split(",");
     let fechadenacimiento = array[4];
@@ -111,6 +117,7 @@ function getFechaDeNacimiento(){
 }
 
 function getNombreApellidos(){
+    var emailiniciado =sessionStorage.getItem("emailiniciado")
     let cookie = sessionStorage.getItem(emailiniciado);
     let array = cookie.split(",");
     let nombreapellidos = array[2];
@@ -118,8 +125,32 @@ function getNombreApellidos(){
 }
 
 function getStringFotoInsertada(){
+    var emailiniciado =sessionStorage.getItem("emailiniciado")
     let cookie = sessionStorage.getItem(emailiniciado);
     let array = cookie.split(",");
     let stringfoto = array[5];
     return stringfoto
 } 
+function abrirperfilartista(artista,url){
+    window.location.href="perfil_artista.html"
+    let array = [artista,url]
+    var strForm=serializarArray(array)
+    sessionStorage.setItem("cantante",array)
+}
+function perfil_artista(){
+    let sesion = sessionStorage.getItem("cantante");
+    let array = sesion.split(",")
+    document.getElementById("titulo").innerHTML = array[0];
+    document.getElementById("imagen").src = array[1];
+    console.log(document.getElementById("imagen").src)
+
+}
+function fotoperfil(){
+    var emailiniciado =sessionStorage.getItem("emailiniciado")
+    let sesion = sessionStorage.getItem(emailiniciado);
+    let array = sesion.split(",")
+    document.getElementById("fotoperfil").src = array[5];
+    console.log(document.getElementById("fotoperfil").src)
+    alert("funciona")
+
+}
