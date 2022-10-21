@@ -4,49 +4,35 @@
 <title>Musica</title>
 <link rel="stylesheet" href="style/entrega1.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="javascript/javascript.js"></script>
 </head>
 <body>
     <div class="columna_izquierda">
         <div class="encabezado_izquierda">
             <img src="images/spotify_icon.png" alt="icon" class="imagen3">
             <div class="titulo">
-                <h1 ><a href="entrega1.html" >UC3Musica</a></h1>
+                <h1 ><a href="entrega3.html" >UC3Musica</a></h1>
             </div>
         </div>
         <div class="cuerpo_izquierda">
             <div class="menu">
-                <div class="menu_option">
+                <div class="menu_option" onclick="abrirListasGuardadas()">
                     <div class="icono">
                         <img src="images/natos.jpg" alt="cantante1" class="imagen2">
                     </div>
                     <div class="texto_menu">
-                        <p class="texto">Hijos de la ruina. Natos y waor</p>
+                        <p class="texto">Listas guardadas</p>
                     </div>
                 </div>
-                <div class="menu_option">
+                <div class="menu_option" onclick="crearListas()">
                     <div class="icono">
                         <img src="images/sech2.jpg" alt="cantante1" class="imagen2">
                     </div>
                     <div class="texto_menu">
-                        <p class="texto">Sueños. Sech</p>
+                        <p class="texto">Crear lista</p>
                     </div>
                 </div>
-                <div class="menu_option">
-                    <div class="icono">
-                        <img src="images/costa.jpg" alt="cantante1" class="imagen2">
-                    </div>
-                    <div class="texto_menu">
-                        <p class="texto">Lento. Fernando Costa</p>
-                    </div>
-                </div>
-                <div class="menu_option">
-                    <div class="icono">
-                        <img src="images/3am.jpg" alt="cantante1" class="imagen2">
-                    </div>
-                    <div class="texto_menu">
-                        <p class="texto">Eminem. 3AM</p>
-                    </div>
-                </div>
+                
 
             </div>
             <div class="links">
@@ -68,26 +54,19 @@
     <div class="columna_derecha">
 
         <div class="encabezado_derecha">
-            <div class="botones">
-                <a href="login.html" class="boton_1">LOG IN</a>
-                <a href="https://www.spotify.com/us/signup" class="boton_2">SIGN UP</a>
-            </div>
+            <img src="a.jpg" class="fotoperfil" id="fotoperfil">
+            <button class="boton-opciones" onclick="abrirListaOpciones()" id="boton-opciones">Opciones</button>
+            <div class="opciones-popup" id="opciones">
+                <form action="#" class="opciones-contenedor">
+                  <h1 class="opciones-titulo">Opciones</h1>
+                  <button class="mi-perfil" onclick="document.location.href='perfil.html'">Mi Perfil</button>
+                  <button class="boton-mis-experiencias" onclick="document.location.href='cuenta.html'">Mi Cuenta</button>
+                  <button class="cerrar-sesión" onclick="document.location.href='entrega2.html'">Cerrar Sesión</button>
+                </form>
+              </div>
         </div>
         <div class="cuerpo_derecha">
-            <form action="contact.php" method="post"> 
-                <div class="elem-group"> 
-                    <label for="name">Nombre</label> 
-                    <input type="text" id="name" name="visitor_name" placeholder="Nombre de ejemplo" pattern=[A-Z\sa-z]{3,20} required> 
-                </div> 
-                <div class="elem-group"> 
-                    <label for="email">Correo electrónico</label> 
-                    <input type="email" id="email" name="visitor_email" placeholder="ejemplo@email.com" required> 
-                </div> 
-                
-                <button type="submit">Enviar mensaje</button>
-            </form>
-        
-            
+              
         </div>
     </div>
     <div class="pie">

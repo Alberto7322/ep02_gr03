@@ -5,7 +5,6 @@
 <link rel="stylesheet" href="style/entrega1.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="javascript/javascript.js"></script>
-
 </head>
 <body>
     <div class="columna_izquierda">
@@ -53,6 +52,7 @@
         
     </div>
     <div class="columna_derecha">
+
         <div class="encabezado_derecha">
             <img src="a.jpg" class="fotoperfil" id="fotoperfil">
             <button class="boton-opciones" onclick="abrirListaOpciones()" id="boton-opciones">Opciones</button>
@@ -66,39 +66,28 @@
               </div>
         </div>
         <div class="cuerpo_derecha">
-            <div class="modal" id="mi-perfil">
-                <span onclick="closeFormMiPerfil()" class="close" title="Close Modal">&times;</span>
-                <form class="modal-content" method="post" action="#" onsubmit="return actualizarValues(this)">
-                <div class="container">
-                    <h1>Mi Perfil</h1>
-                    <p>Estos son los atributos de su perfil.</p>
+            <div class="modal" id="id01">
+                <form class="modal-content" method="post" action="#" onsubmit="return storeSongs(this)">
+                  <div class="container">
+                    <h1>PlayList</h1>
+                    <p>Crear una lista.</p>
                     <hr>
-                    <label for="usuario"><b>Nombre de usuario</b></label>
-                    <input type="text" id="usuariovariable" value="" placeholder="" name="usuario" required>
+                    <label for="usuario"><b>Título</b></label>
+                    <input type="text" placeholder="Nombre de la lista" name="usuario" required>
                     <br>
-                    <label for="psw"><b>Contraseña</b></label>
-                    <input type="password" id="contraseñavariable" value="" placeholder="" name="usuario" required>
+                    <label for="psw"><b>Canciones</b></label>
+                    <input type="text" placeholder="Introduzca su contraseña" name="canciones" id="busqueda" onkeyup="buscadorCanciones()" required>
                     <br>
-                    <label for="nombreapellidos"><b>Nombre y Apellidos</b></label>
-                    <input type="text" id="nombrevariable" value="" placeholder="" name="usuario" required>
-                    <br>
-                    <label for="fechadenacimiento"><b>Fecha de nacimiento</b></label>
-                    <input type="date" id="fechavariable" value="" placeholder="" name="usuario" required>
-                    <br>
-                    <label for="fotodeperfil"><b>Foto de perfil</b></label>
-                    <input type="file" placeholder="Introduzca una foto de perfil (opcional)" name="fotodeperfil" id="fotodeperfilcambiada">
-                    <br>
+            
                     <div class="clearfix">
-                        <button type="reset" class="signupbtn">Borrar</button>
-                        <button type="submit" class="signupbtn">Guardar</button>
+                      <button type="reset" class="signupbtn">Borrar</button>
+                      <button type="submit" class="signupbtn">Crear Listas</button>
                     </div>
-                </div>
+                  </div>
                 </form>
-            </div>
+              </div>
         </div>
     </div>
     <div class="pie">
         <p class="texto_pie">Usa la web que viene bien</p>
     </div>
-</body>
-    

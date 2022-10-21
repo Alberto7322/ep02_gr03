@@ -20,6 +20,7 @@ function storeValues(form){
         let array = [form.usuario.value, form.psw.value, form.nombreapellidos.value, form.email.value, form.fechadenacimiento.value,form.fotodeperfil.value];
         var strForm = serializarArray(array);
         sessionStorage.setItem(form.email.value, strForm);
+        sessionStorage.setItem("lista:"+ form.email.value,["Guardadas"]);
         return true;
     }else{
         alert("Ya existe una cookie asociada a este correo");
@@ -153,4 +154,36 @@ function fotoperfil(){
     console.log(document.getElementById("fotoperfil").src)
     alert("funciona")
 
+}
+
+function abrirListasGuardadas(){
+    window.location.href="lista_canciones.html";
+
+}
+function crearListas(){
+    var emailiniciado =sessionStorage.getItem("emailiniciado");
+    window.location.href="crearListas.html";
+    sessionStorage.setItem("listaactual","guardadas")
+
+}
+function storeSongs(form){
+    var emailiniciado =sessionStorage.getItem("emailiniciado");
+    let lista = sessionStorage.getItem("lista:"+ emailiniciado);
+    var listanueva = lista +"," + form.usuario.value;
+    sessionStorage.setItem("lista:" + emailiniciado, listanueva);
+    sessionStorage.getItem(form.usuario.value,"canciones")
+}
+function buscadorCanciones(){
+    var busqueda = document.getElementById("busqueda")
+    var cancion = busqueda.value.toUpperCase()
+    var lista = [callaita,sech,jbalvin,ozuna,nickyjam]
+    for (i=0;i < lista.length;i++){
+        if (lista[i]== cancion){
+            var listaliniciada =sessionStorage.getItem("listaactual");
+            var listanueva = lista2 +"," + listainiciada;
+            sessionStorage.setItem(listainiciada, listanueva);
+
+
+        }
+    }
 }
