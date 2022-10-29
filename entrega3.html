@@ -54,26 +54,31 @@
     <div class="columna_derecha">
 
         <div class="encabezado_derecha"  >
-            <img src="a.jpg" class="fotoperfil" id="fotoperfil">
-            <button class="boton-opciones" onclick="abrirListaOpciones()" id="boton-opciones">Opciones</button>
-            <div class="opciones-popup" id="opciones">
-                <form action="#" class="opciones-contenedor">
-                  <h1 class="opciones-titulo">Opciones</h1>
-                  <button class="mi-perfil" onclick="location.href='perfil.html'">Mi Perfil</button>
-                  <button class="boton-mis-experiencias" onclick="location.href='cuenta.html'">Mi Cuenta</button>
-                  <button class="cerrar-sesión" onclick="location.href='entrega2.html'">Cerrar Sesión</button>
-                </form>
-              </div>
+            <div class="encabezado-perfil">
+                <img src="a.jpg" class="fotoperfil" id="fotoperfil">
+                <button class="boton-opciones" onclick="abrirListaOpciones()" id="boton-opciones">Opciones</button>
+                <div class="opciones-popup" id="opciones">
+                    <form action="#" class="opciones-contenedor">
+                      <h1 class="opciones-titulo">Opciones</h1>
+                      <button class="mi-perfil" onclick="location.href='perfil.html'">Mi Perfil</button>
+                      <button class="boton-mis-experiencias" onclick="location.href='cuenta.html'">Mi Cuenta</button>
+                      <button class="cerrar-sesión" onclick="location.href='entrega2.html'">Cerrar Sesión</button>
+                    </form>
+               </div>
+            </div>
+
+            <div class="buscador">
+                <input
+            </div>
+
         </div>
 
         <div class="cuerpo_derecha">
             <h1 class="tipo_musica">Reggaeton</h1>
             <div class="reggaeton">
                  <div class="imagen">
-                    <div onmouseover="this.className='badbunny2';" onmouseout="this.className='badbunny';" class="badbunny">
-                        <audio controls autoplay onmouseover="this.className='reproductor2';" onmouseout="this.className='reproductor';" class="reproductor">
-                            <source src="musica/badbunny.mp3" >
-                        </audio>
+                    <div onmouseover="this.className='badbunny2';" onmouseout="this.className='badbunny';" onclick="reproductor();" class="badbunny">
+
                     </div>
                      
                      <p class="texto">Benito Antonio Martínez Ocasio (Almirante Sur, Vega Baja, 10 de marzo de 1994), conocido artísticamente como Bad Bunny</p>
@@ -121,7 +126,7 @@
             <h1 class="tipo_musica">Trap</h1>
             <div class="reggaeton">
                 <div class="imagen">
-                   <div onmouseover="this.className='tiago2';" onmouseout="this.className='tiago';" class="tiago">
+                   <div class="tiago">
                        <audio controls autoplay onmouseover="this.className='reproductor2';" onmouseout="this.className='reproductor';" class="reproductor">
                            <source src="musica/tiago.mp3" >
                        </audio>
@@ -220,8 +225,10 @@
             
         </div>
     </div>
-    <div class="pie">
-        <p class="texto_pie">Usa la web que viene bien</p>
+    <div class="pie" id="reproductor1">
+        <audio controls autoplay class="reproductor" >
+            <source src="musica/badbunny.mp3" >
+        </audio>
     </div>
 
 </body>

@@ -427,6 +427,14 @@ img:hover {
     font-size: x-large;
 }
 
+.iconos{
+    width:10%;
+}
+
+.encabezado-perfil{
+    float:right;
+    width:25%;
+}
   
 @media screen and (max-width: 768px) {
     .encabezado_derecha{

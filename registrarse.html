@@ -4,6 +4,7 @@
 <title>Musica</title>
     <link rel="stylesheet" href="style/entrega1.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <script src="javascript/javascript.js"></script>
 </head>
 <body>
@@ -76,6 +77,8 @@
         </div>
         <div class="cuerpo_derecha">
             <div class="modal" id="id01">
+                <img src="images/google-icon.png" class="iconos">
+                <img src="images/facebook-icon.png" class="iconos">
                 <form class="modal-content" method="post" action="#" onsubmit="return storeValues(this)">
                   <div class="container">
                     <h1>Sign Up</h1>
@@ -100,7 +103,7 @@
                     <input type="file" placeholder="Introduzca una foto de perfil (opcional)" id="fotoinsertada" name="fotodeperfil">
                     <br>
                     <label>
-                      <input type="checkbox" name="condicionesdeuso" style="margin-bottom:15px"> He leído y acepto las condiciones de uso
+                      <input type="checkbox" name="condicionesdeuso" style="margin-bottom:15px" required> He leído y acepto las condiciones de uso
                     </label>
             
                     <div class="clearfix">

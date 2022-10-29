@@ -173,17 +173,113 @@ function storeSongs(form){
     sessionStorage.setItem("lista:" + emailiniciado, listanueva);
     sessionStorage.getItem(form.usuario.value,"canciones")
 }
-function buscadorCanciones(){
-    var busqueda = document.getElementById("busqueda")
-    var cancion = busqueda.value.toUpperCase()
-    var lista = [callaita,sech,jbalvin,ozuna,nickyjam]
-    for (i=0;i < lista.length;i++){
-        if (lista[i]== cancion){
-            var listaliniciada =sessionStorage.getItem("listaactual");
-            var listanueva = lista2 +"," + listainiciada;
-            sessionStorage.setItem(listainiciada, listanueva);
 
 
-        }
+
+
+function contador(){
+    const DATE_TARGET = new Date('11/15/2022 0:00 AM');
+    const DATE_TARGET2 = new Date('11/18/2022 0:00 AM');
+    const DATE_TARGET3 = new Date('11/21/2022 0:00 AM');
+    const DATE_TARGET4 = new Date('11/24/2022 0:00 AM');
+    const DATE_TARGET5 = new Date('11/27/2022 0:00 AM');
+    // DOM for render
+    const SPAN_DAYS = document.querySelector('span#days');
+    const SPAN_HOURS = document.querySelector('span#hours');
+    const SPAN_MINUTES = document.querySelector('span#minutes');
+    const SPAN_SECONDS = document.querySelector('span#seconds');
+
+    const SPAN_DAYS2 = document.querySelector('span#days2');
+    const SPAN_HOURS2 = document.querySelector('span#hours2');
+    const SPAN_MINUTES2= document.querySelector('span#minutes2');
+    const SPAN_SECONDS2 = document.querySelector('span#seconds2');
+
+    const SPAN_DAYS3 = document.querySelector('span#days3');
+    const SPAN_HOURS3 = document.querySelector('span#hours3');
+    const SPAN_MINUTES3= document.querySelector('span#minutes3');
+    const SPAN_SECONDS3 = document.querySelector('span#seconds3');
+
+    const SPAN_DAYS4 = document.querySelector('span#days4');
+    const SPAN_HOURS4 = document.querySelector('span#hours4');
+    const SPAN_MINUTES4= document.querySelector('span#minutes4');
+    const SPAN_SECONDS4 = document.querySelector('span#seconds4');
+
+    const SPAN_DAYS5 = document.querySelector('span#days5');
+    const SPAN_HOURS5 = document.querySelector('span#hours5');
+    const SPAN_MINUTES5= document.querySelector('span#minutes5');
+    const SPAN_SECONDS5 = document.querySelector('span#seconds5');
+
+    // Milliseconds for the calculations
+    const MILLISECONDS_OF_A_SECOND = 1000;
+    const MILLISECONDS_OF_A_MINUTE = MILLISECONDS_OF_A_SECOND * 60;
+    const MILLISECONDS_OF_A_HOUR = MILLISECONDS_OF_A_MINUTE * 60;
+    const MILLISECONDS_OF_A_DAY = MILLISECONDS_OF_A_HOUR * 24;
+
+    function updateCountdown() {
+        // Calcs
+        const NOW = new Date()
+        const DURATION = DATE_TARGET - NOW;
+        const DURATION2 = DATE_TARGET2 - NOW;
+        const DURATION3 = DATE_TARGET3 - NOW;
+        const DURATION4 = DATE_TARGET4 - NOW;
+        const DURATION5 = DATE_TARGET5 - NOW;
+
+        const dias = Math.floor(DURATION / MILLISECONDS_OF_A_DAY);
+        const horas = Math.floor((DURATION % MILLISECONDS_OF_A_DAY) / MILLISECONDS_OF_A_HOUR);
+        const minutos= Math.floor((DURATION % MILLISECONDS_OF_A_HOUR) / MILLISECONDS_OF_A_MINUTE);
+        const segundos = Math.floor((DURATION % MILLISECONDS_OF_A_MINUTE) / MILLISECONDS_OF_A_SECOND);
+
+        const dias2 = Math.floor(DURATION2 / MILLISECONDS_OF_A_DAY);
+        const horas2 = Math.floor((DURATION2 % MILLISECONDS_OF_A_DAY) / MILLISECONDS_OF_A_HOUR);
+        const minutos2= Math.floor((DURATION2 % MILLISECONDS_OF_A_HOUR) / MILLISECONDS_OF_A_MINUTE);
+        const segundos2 = Math.floor((DURATION2 % MILLISECONDS_OF_A_MINUTE) / MILLISECONDS_OF_A_SECOND);
+
+        const dias3 = Math.floor(DURATION3 / MILLISECONDS_OF_A_DAY);
+        const horas3 = Math.floor((DURATION3 % MILLISECONDS_OF_A_DAY) / MILLISECONDS_OF_A_HOUR);
+        const minutos3= Math.floor((DURATION3 % MILLISECONDS_OF_A_HOUR) / MILLISECONDS_OF_A_MINUTE);
+        const segundos3 = Math.floor((DURATION3 % MILLISECONDS_OF_A_MINUTE) / MILLISECONDS_OF_A_SECOND);
+
+        const dias4 = Math.floor(DURATION4 / MILLISECONDS_OF_A_DAY);
+        const horas4 = Math.floor((DURATION4 % MILLISECONDS_OF_A_DAY) / MILLISECONDS_OF_A_HOUR);
+        const minutos4= Math.floor((DURATION4 % MILLISECONDS_OF_A_HOUR) / MILLISECONDS_OF_A_MINUTE);
+        const segundos4 = Math.floor((DURATION4 % MILLISECONDS_OF_A_MINUTE) / MILLISECONDS_OF_A_SECOND);
+
+        const dias5 = Math.floor(DURATION5 / MILLISECONDS_OF_A_DAY);
+        const horas5 = Math.floor((DURATION5 % MILLISECONDS_OF_A_DAY) / MILLISECONDS_OF_A_HOUR);
+        const minutos5= Math.floor((DURATION5 % MILLISECONDS_OF_A_HOUR) / MILLISECONDS_OF_A_MINUTE);
+        const segundos5 = Math.floor((DURATION5 % MILLISECONDS_OF_A_MINUTE) / MILLISECONDS_OF_A_SECOND);
+
+        // Render
+        SPAN_DAYS.textContent = dias;
+        SPAN_HOURS.textContent = horas;
+        SPAN_MINUTES.textContent = minutos;
+        SPAN_SECONDS.textContent = segundos;
+
+        SPAN_DAYS2.textContent = dias2;
+        SPAN_HOURS2.textContent = horas2;
+        SPAN_MINUTES2.textContent = minutos2;
+        SPAN_SECONDS2.textContent = segundos2;
+
+        SPAN_DAYS3.textContent = dias3;
+        SPAN_HOURS3.textContent = horas3;
+        SPAN_MINUTES3.textContent = minutos3;
+        SPAN_SECONDS3.textContent = segundos3;
+
+        SPAN_DAYS4.textContent = dias4;
+        SPAN_HOURS4.textContent = horas4;
+        SPAN_MINUTES4.textContent = minutos4;
+        SPAN_SECONDS4.textContent = segundos4;
+
+        SPAN_DAYS5.textContent = dias5;
+        SPAN_HOURS5.textContent = horas5;
+        SPAN_MINUTES5.textContent = minutos5;
+        SPAN_SECONDS5.textContent = segundos5;
     }
+
+    //===
+    // INIT
+    //===
+    updateCountdown();
+    // Refresh every second
+    setInterval(updateCountdown, MILLISECONDS_OF_A_SECOND);
 }
