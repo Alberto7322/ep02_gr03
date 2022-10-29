@@ -67,7 +67,7 @@
         </div>
         <div class="cuerpo_derecha">
             <div class="modal" id="id01">
-                <form class="modal-content" method="post" action="#" onsubmit="return storeSongs(this)">
+                <form class="modal-content" method="post" action="#" onsubmit="storeSongs(this)">
                   <div class="container">
                     <h1>PlayList</h1>
                     <p>Crear una lista.</p>
@@ -75,8 +75,8 @@
                     <label for="usuario"><b>Título</b></label>
                     <input type="text" placeholder="Nombre de la lista" name="usuario" required>
                     <br>
-                    <label for="psw"><b>Canciones</b></label>
-                    <input type="text" placeholder="Introduzca su contraseña" name="canciones" id="busqueda" onkeyup="buscadorCanciones()" required>
+                    <label for="cancion"><b>Canciones</b></label>
+                    <input type="text" multiple placeholder="Canciones" name="canciones" id="busqueda" onkeyup="buscadorCanciones()" required>
                     <br>
             
                     <div class="clearfix">

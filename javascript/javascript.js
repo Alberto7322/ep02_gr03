@@ -163,19 +163,37 @@ function abrirListasGuardadas(){
 function crearListas(){
     var emailiniciado =sessionStorage.getItem("emailiniciado");
     window.location.href="crearListas.html";
-    sessionStorage.setItem("listaactual","guardadas")
 
 }
 function storeSongs(form){
+    let cancionesposible = [{id:"bad bunny",info:"musica/badbunny.mp3,images/badbunny.jpg"},
+        {id:"j balvin",info:"musica/balvin.mp3,images/balvin.jpg"}]
     var emailiniciado =sessionStorage.getItem("emailiniciado");
-    let lista = sessionStorage.getItem("lista:"+ emailiniciado);
-    var listanueva = lista +"," + form.usuario.value;
-    sessionStorage.setItem("lista:" + emailiniciado, listanueva);
-    sessionStorage.getItem(form.usuario.value,"canciones")
+    var iniciado =false
+    let listainiciados = sessionStorage.getItem("lista:"+emailiniciado)
+    let lista2 = listainiciados.split(",")
+    for(i=0;i< lista2.length;i++){
+        if(form.usuario.value === lista2[i]){
+            iniciado = true
+        }
+    }
+    if (iniciado === false){
+        var listanueva = listainiciados +"," + form.usuario.value;
+        sessionStorage.setItem("lista:" + emailiniciado, listanueva);
+        sessionStorage.setItem(form.usuario.value,"canciones")
+    }
+
+
+    var cancionelegida = form.canciones.value
+    for(i=0;i<cancionesposible.length;i++){
+        if(cancionelegida === cancionesposible[i].id){
+            var c1 = sessionStorage.getItem(form.usuario.value)
+            var c2 =c1 + "," + cancionesposible[i].info
+            sessionStorage.setItem(form.usuario.value,c2)
+
+        }
+    }
 }
-
-
-
 
 function contador(){
     const DATE_TARGET = new Date('11/15/2022 0:00 AM');
