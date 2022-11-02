@@ -192,25 +192,27 @@ function perfil_nuestro(){
     var array2 = array1.split(",")
 
     const lista = document.getElementById("listas_creadas")
-    var fragment = document.createDocumentFragment()
+    const fragment = document.createDocumentFragment()
 
-    for(i=1;i<array2.length;i++){
-        var contenido = document.createElement("DIV")
-        var imagen = document.createElement("DIV")
-        imagen.id="imagen"
+    for (i = 1; i < array2.length; i++) {
+        const div = document.createElement("DIV")
+        const imagen = document.createElement("DIV")
         var img = document.createElement("IMG")
         img.src="images/natos.jpg"
         img.className="imagen_musica"
-        imagen.appendChild(img)
-        var texto = document.createElement("DIV")
-        texto.id="texto"
-        var p = document.createElement("P")
+        const texto = document.createElement("DIV")
+        var p =document.createElement("P")
         p.innerHTML=array2[i]
-        p.className="texto_lista"
+        imagen.appendChild(img)
         texto.appendChild(p)
-        contenido.appendChild(imagen)
-        contenido.appendChild(texto)
-        fragment.appendChild(contenido)
+        div.appendChild(imagen)
+        div.appendChild(texto)
+        div.id=array2[i]
+        div.onclick=function abrirlistas(){
+            sessionStorage.setItem("listaabierta",div.id)
+            window.location.href="canciones.html"
+        }
+        fragment.appendChild(div)
     }
     lista.appendChild(fragment)
 
@@ -292,7 +294,9 @@ function verlistascreadas() {
     let listascreadas = sessionStorage.getItem("lista:" + emailiniciado)
     let listascreadas2 = listascreadas.split(",")
     
-    const principal = document.getElementById("cuerpo_derecha")
+    const cuerpo = document.getElementById("cuerpo_derecha")
+    const principal =document.createElement("DIV")
+    principal.className ="reggaeton"
     const fragment = document.createDocumentFragment()
     console.log(listascreadas2)
 
@@ -301,7 +305,7 @@ function verlistascreadas() {
         const imagen = document.createElement("DIV")
         var img = document.createElement("IMG")
         img.src="images/natos.jpg"
-        img.className="imagen"
+        img.className="imagen_musica"
         const texto = document.createElement("DIV")
         var p =document.createElement("P")
         p.innerHTML=listascreadas2[i]
@@ -309,26 +313,24 @@ function verlistascreadas() {
         texto.appendChild(p)
         div.appendChild(imagen)
         div.appendChild(texto)
-
-        div.id="canciones "+i
+        var a=listascreadas2[i]
+        div.id=listascreadas2[i]
         div.onclick=function abrirlistas(){
-            alert("hola")
-            sessionStorage.setItem("listaabierta","manuel")
+            sessionStorage.setItem("listaabierta",div.id)
             window.location.href="canciones.html"
         }
         fragment.appendChild(div)
     }
     principal.appendChild(fragment)
+    cuerpo.appendChild(principal)
 
     
 }
 
 function vercancionescreadas(){
     var listaabierta = sessionStorage.getItem("listaabierta")
-    console.log(listaabierta)
     var canciones = sessionStorage.getItem(listaabierta)
     let array = canciones.split(",")
-    console.log(array)
     document.getElementById("nombre_lista").textContent = listaabierta
 
     const listacancion = document.getElementById("canciones")
@@ -342,17 +344,25 @@ function vercancionescreadas(){
         imagen.id="imagen"
         img.className="imagen_musica"
         imagen.appendChild(img)
-        const musica = document.createElement("DIV")
-        var audio = document.createElement("AUDIO")
-        audio.setAttribute("src",array[i])
-        audio.setAttribute("controls", "controls");
-        audio.className="audio_musica"
-        musica.id="musica"
-        musica.appendChild(audio)
         itemList.appendChild(imagen)
-        itemList.appendChild(musica)
         itemList.id = "cancion"
         itemList.className ="cancion"
+        itemList.onclick=function reproductor2(){
+            const pie = document.getElementById("reproductor1")
+            if (document.getElementById("musica") !== null){
+                console.log(document.getElementById("musica"))
+                var musicaborrada = document.getElementById("musica")
+                pie.removeChild(musicaborrada)
+            }
+            const musica = document.createElement("DIV")
+            var audio = document.createElement("AUDIO")
+            audio.setAttribute("src","musica/badbunny.mp3")
+            audio.setAttribute("controls", "controls");
+            audio.className="audio_musica_pie"
+            musica.id="musica"
+            musica.appendChild(audio)
+            pie.appendChild(musica)
+        }
         fragment.appendChild(itemList)
     }
     listacancion.appendChild(fragment)
@@ -375,6 +385,24 @@ function reproducircancion(form){
     }
 
 }
+function reproductor(link){
+    console.log("funciona")
+    const pie = document.getElementById("reproductor1")
+    if (document.getElementById("musica") !== null){
+        console.log(document.getElementById("musica"))
+        var musicaborrada = document.getElementById("musica")
+        pie.removeChild(musicaborrada)
+    }
+    const musica = document.createElement("DIV")
+    var audio = document.createElement("AUDIO")
+    audio.setAttribute("src",link)
+    audio.setAttribute("controls", "controls");
+    audio.className="audio_musica_pie"
+    musica.id="musica"
+    musica.appendChild(audio)
+    pie.appendChild(musica)
+
+}
 
 function abrircancion(){
     var lista = sessionStorage.getItem("cancioniniciada")
@@ -392,11 +420,23 @@ function abrircancion(){
     img.src=lista2[1]
     img.className="imagen"
     imagen.appendChild(img)
-    var musica=document.createElement("DIV")
-    var audio=document.createElement("AUDIO")
-    audio.setAttribute("src",lista2[2])
-    audio.setAttribute("controls", "controls");
-    musica.appendChild(audio)
+
+    imagen.onclick=function reproductor3(){
+            const pie = document.getElementById("reproductor1")
+            if (document.getElementById("musica") !== null){
+                console.log(document.getElementById("musica"))
+                var musicaborrada = document.getElementById("musica")
+                pie.removeChild(musicaborrada)
+            }
+            const musica = document.createElement("DIV")
+            var audio = document.createElement("AUDIO")
+            audio.setAttribute("src","musica/badbunny.mp3")
+            audio.setAttribute("controls", "controls");
+            audio.className="audio_musica_pie"
+            musica.id="musica"
+            musica.appendChild(audio)
+            pie.appendChild(musica)
+        }
 
     var boton=document.createElement("DIV")
     var boton2=document.createElement("BUTTON")
@@ -411,7 +451,6 @@ function abrircancion(){
     boton.appendChild(boton2)
 
     fragment.appendChild(imagen)
-    fragment.appendChild(musica)
     fragment.appendChild(boton)
 
 

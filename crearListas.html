@@ -53,17 +53,30 @@
     </div>
     <div class="columna_derecha">
 
-        <div class="encabezado_derecha">
-            <img src="a.jpg" class="fotoperfil" id="fotoperfil">
-            <button class="boton-opciones" onclick="abrirListaOpciones()" id="boton-opciones">Opciones</button>
-            <div class="opciones-popup" id="opciones">
-                <form action="#" class="opciones-contenedor">
-                  <h1 class="opciones-titulo">Opciones</h1>
-                  <button class="mi-perfil" onclick="document.location.href='perfil.html'">Mi Perfil</button>
-                  <button class="boton-mis-experiencias" onclick="document.location.href='cuenta.html'">Mi Cuenta</button>
-                  <button class="cerrar-sesión" onclick="document.location.href='entrega2.html'">Cerrar Sesión</button>
+        <div class="encabezado_derecha"  >
+            <div class="encabezado-perfil">
+                <img src="a.jpg" class="fotoperfil" id="fotoperfil">
+                <button class="boton-opciones" onclick="abrirListaOpciones()" id="boton-opciones">Opciones</button>
+                <div class="opciones-popup" id="opciones">
+                    <form action="#" class="opciones-contenedor">
+                      <h1 class="opciones-titulo">Opciones</h1>
+                      <button class="mi-perfil" onclick="window.location.href='perfil.html'">Mi Perfil</button>
+                      <button class="boton-mis-experiencias" onclick="window.location.href='cuenta.html'">Mi Cuenta</button>
+                      <button class="cerrar-sesión" onclick="window.location.href='entrega2.html'">Cerrar Sesión</button>
+                    </form>
+               </div>
+            </div>
+
+            <div class="buscador">
+                <form class="modal-content" method="post" action="cancion.html" onsubmit="reproducircancion(this)">
+                  <div class="container">
+                    <label for="cancion"></label>
+                    <input type="text"  class="buscador_entrada" placeholder="Busca la cancion" name="canciones" required>
+                    <button type="submit"  class="btnsubmit2">Buscar</button>
+                  </div>
                 </form>
-              </div>
+            </div>
+
         </div>
         <div class="cuerpo_derecha">
             <div class="modal" id="id01">
@@ -89,5 +102,4 @@
         </div>
     </div>
     <div class="pie">
-        <p class="texto_pie">Usa la web que viene bien</p>
     </div>

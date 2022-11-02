@@ -59,24 +59,21 @@
                 <div class="opciones-popup" id="opciones">
                     <form action="#" class="opciones-contenedor">
                       <h1 class="opciones-titulo">Opciones</h1>
-                      <button class="mi-perfil" onclick="location.href='perfil.html'">Mi Perfil</button>
-                      <button class="boton-mis-experiencias" onclick="location.href='cuenta.html'">Mi Cuenta</button>
-                      <button class="cerrar-sesión" onclick="location.href='entrega2.html'">Cerrar Sesión</button>
+                      <button class="mi-perfil" onclick="window.location.href='perfil.html'">Mi Perfil</button>
+                      <button class="boton-mis-experiencias" onclick="window.location.href='cuenta.html'">Mi Cuenta</button>
+                      <button class="cerrar-sesión" onclick="window.location.href='entrega2.html'">Cerrar Sesión</button>
                     </form>
                </div>
             </div>
 
             <div class="buscador">
-                    <form class="modal-content" method="post" action="#" onsubmit="reproducircancion(this)">
+                <form class="modal-content" method="post" action="cancion.html" onsubmit="reproducircancion(this)">
                   <div class="container">
-                    <label ><b>Canciones</b></label>
-                    <input type="text" multiple placeholder="Canciones" name="canciones" id="busqueda"  required>
-                    <br>
+                    <label for="cancion"></label>
+                    <input type="text"  class="buscador_entrada" placeholder="Busca la cancion" name="canciones" required>
+                    <button type="submit"  class="btnsubmit2">Buscar</button>
                   </div>
-                   <div class="clearfix">
-                      <button type="submit" class="signupbtn">Crear Listas</button>
-                   </div>
-                    </form>
+                </form>
             </div>
 
         </div>
