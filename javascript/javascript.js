@@ -21,6 +21,7 @@ function storeValues(form){
         var strForm = serializarArray(array);
         sessionStorage.setItem(form.email.value, strForm);
         sessionStorage.setItem("lista:"+ form.email.value,["Guardadas"]);
+        sessionStorage.setItem("cancionesfavoritas:"+form.email.value,"favoritas")
         return true;
     }else{
         alert("Ya existe una cookie asociada a este correo");
@@ -47,6 +48,7 @@ function validarDatos(form){
             alert("Has iniciado sesión correctamente");
             window.location.href = "entrega3.html";
             sessionStorage.setItem("emailiniciado",email)
+
             console.log(window.location.href)
             
             
@@ -168,6 +170,22 @@ function perfil_artista(){
     canciones.appendChild(fragment)
 
 }
+
+function abrirperfilusuario(usuario,url){
+    window.location.href="perfil_usuario.html"
+    let array = [artista,url]
+    var strForm=serializarArray(array)
+    sessionStorage.setItem("usuario",array)
+}
+function perfil_usuario(){
+    let sesion = sessionStorage.getItem("usuario");
+    let array = sesion.split(",")
+    document.getElementById("titulo").innerHTML = array[0];
+    document.getElementById("imagen").src = array[1];
+    console.log(document.getElementById("imagen").src)
+
+}
+
 function perfil_nuestro(){
     var emailiniciado=sessionStorage.getItem("emailiniciado")
     var array1 = sessionStorage.getItem("lista:"+emailiniciado)
@@ -195,6 +213,35 @@ function perfil_nuestro(){
         fragment.appendChild(contenido)
     }
     lista.appendChild(fragment)
+
+    var favoritas = document.getElementById("favoritas")
+    var fragment2 = document.createDocumentFragment()
+
+    var lista_favoritas = sessionStorage.getItem("cancionesfavoritas:"+emailiniciado)
+    var array_favoritas = lista_favoritas.split(",")
+
+    for(i=1;i<array_favoritas.length;i=i+3){
+        var div = document.createElement("DIV")
+        div.id = "cancion"
+        var imagen2 =document.createElement("DIV")
+        imagen2.id ="imagen_musica"
+        var img2 =document.createElement("IMG")
+        img2.src=array_favoritas[i+1]
+        img2.className="imagen_musica"
+        imagen2.appendChild(img2)
+        var musica =document.createElement("DIV")
+        musica.id ="audio_musica"
+        var audio = document.createElement("AUDIO")
+        audio.setAttribute("src",array_favoritas[i+2])
+        audio.setAttribute("controls", "controls");
+        audio.className="audio_musica"
+        musica.appendChild(audio)
+        div.appendChild(imagen2)
+        div.appendChild(musica)
+        fragment2.appendChild(div)
+    }
+    favoritas.appendChild(fragment2)
+
 }
 
 function abrirListasGuardadas(){
@@ -298,14 +345,64 @@ function vercancionescreadas(){
 
 
 function reproducircancion(form){
-    console.log("funciona")
-    sessionStorage.setItem("cancioniniciada",form.canciones.value)
-    window.location.href="cancion.html"
+     let array = [{id:"Sech",imagen:"images/sech.jpg",musica:"musica/sech.mp3"},
+         {id:"Bad Bunny",imagen:"images/badbunny.jpg",musica:"musica/badbunny.mp3"}]
+    var cancion = form.canciones.value
 
-
-
+    for(i=0;i<array.length;i++){
+        var id = array[i].id
+        if(id === cancion){
+            musica = array[i].musica
+            sessionStorage.setItem("cancioniniciada",array[i].id+","+array[i].imagen
+                +","+musica)
+        }
+    }
 
 }
+
+function abrircancion(){
+    var lista = sessionStorage.getItem("cancioniniciada")
+    var lista2 = lista.split(",")
+
+    var principal=document.getElementById("cuerpo_derecha")
+    var fragment=document.createDocumentFragment()
+
+    var titulo =document.createElement("H1")
+    titulo.innerHTML=lista2[0]
+    titulo.className="tipo_musica"
+    fragment.appendChild(titulo)
+    var imagen=document.createElement("DIV")
+    var img = document.createElement("IMG")
+    img.src=lista2[1]
+    img.className="imagen"
+    imagen.appendChild(img)
+    var musica=document.createElement("DIV")
+    var audio=document.createElement("AUDIO")
+    audio.setAttribute("src",lista2[2])
+    audio.setAttribute("controls", "controls");
+    musica.appendChild(audio)
+
+    var boton=document.createElement("DIV")
+    var boton2=document.createElement("BUTTON")
+    boton2.innerHTML = 'Me gusta';
+    boton2.onclick = function(){
+        var emailiniciado = sessionStorage.getItem("emailiniciado")
+        var favoritas = sessionStorage.getItem("cancionesfavoritas:"+emailiniciado)
+        var string = favoritas + "," +lista
+        sessionStorage.setItem("cancionesfavoritas:"+emailiniciado,string)
+
+    }
+    boton.appendChild(boton2)
+
+    fragment.appendChild(imagen)
+    fragment.appendChild(musica)
+    fragment.appendChild(boton)
+
+
+
+    principal.appendChild(fragment)
+}
+
 
 
 function contador(){

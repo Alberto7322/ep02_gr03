@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="javascript/javascript.js"></script>
 </head>
-<body >
+<body onload="abrircancion()">
     <div class="columna_izquierda">
         <div class="encabezado_izquierda">
             <img src="images/spotify_icon.png" alt="icon" class="imagen3">
@@ -52,7 +52,6 @@
 
     </div>
     <div class="columna_derecha">
-
         <div class="encabezado_derecha"  >
             <div class="encabezado-perfil">
                 <img src="a.jpg" class="fotoperfil" id="fotoperfil">
@@ -70,22 +69,23 @@
             <div class="buscador">
                     <form class="modal-content" method="post" action="#" onsubmit="reproducircancion(this)">
                   <div class="container">
-                    <label for="cancion"><b>Canciones</b></label>
+                    <label ><b>Canciones</b></label>
                     <input type="text" multiple placeholder="Canciones" name="canciones" id="busqueda"  required>
                     <br>
                   </div>
                    <div class="clearfix">
                       <button type="submit" class="signupbtn">Crear Listas</button>
-                    </div>
+                   </div>
+                    </form>
             </div>
 
         </div>
-
-        <div class="cuerpo_derecha">
-
-        </div>
-    <div class="pie" id="reproductor1">
+        <div class="cuerpo_derecha" id="cuerpo_derecha">
 
     </div>
+    </div>
+    <div class="pie" id="reproductor1">
+
+</div>
 
 </body>
