@@ -64,7 +64,7 @@ function validarDatos(form){
 function checkPassword(email, psw){
     let cookie = sessionStorage.getItem(email);
     let array = cookie.split(",");
-    if (array[2] == psw){
+    if (array[1] == psw){
         return true;
     }else{
         return false;
@@ -132,9 +132,9 @@ function getStringFotoInsertada(){
     let stringfoto = array[5];
     return stringfoto
 } 
-function abrirperfilartista(artista,url){
+function abrirperfilartista(artista,url,mp3){
     window.location.href="perfil_artista.html"
-    let array = [artista,url]
+    let array = [artista,url,mp3]
     var strForm=serializarArray(array)
     sessionStorage.setItem("cantante",array)
 }
@@ -142,18 +142,59 @@ function perfil_artista(){
     let sesion = sessionStorage.getItem("cantante");
     let array = sesion.split(",")
     document.getElementById("titulo").innerHTML = array[0];
-    document.getElementById("imagen").src = array[1];
-    console.log(document.getElementById("imagen").src)
+    const canciones = document.getElementById("canciones_cantante")
+    const fragment = document.createDocumentFragment()
+    for(i=0;i<5;i++){
+        var div = document.createElement("DIV")
+        div.id = "cancion"
+        var imagen =document.createElement("DIV")
+        imagen.id ="imagen_musica"
+        var img =document.createElement("IMG")
+        img.src=array[1]
+        img.className="imagen_musica"
+        imagen.appendChild(img)
+        var musica =document.createElement("DIV")
+        musica.id ="audio_musica"
+        var audio = document.createElement("AUDIO")
+        audio.setAttribute("src",array[2])
+        audio.setAttribute("controls", "controls");
+        audio.className="audio_musica"
+        musica.appendChild(audio)
+        div.appendChild(imagen)
+        div.appendChild(musica)
+        fragment.appendChild(div)
+
+    }
+    canciones.appendChild(fragment)
 
 }
-function fotoperfil(){
-    var emailiniciado =sessionStorage.getItem("emailiniciado")
-    let sesion = sessionStorage.getItem(emailiniciado);
-    let array = sesion.split(",")
-    document.getElementById("fotoperfil").src = array[5];
-    console.log(document.getElementById("fotoperfil").src)
-    alert("funciona")
+function perfil_nuestro(){
+    var emailiniciado=sessionStorage.getItem("emailiniciado")
+    var array1 = sessionStorage.getItem("lista:"+emailiniciado)
+    var array2 = array1.split(",")
 
+    const lista = document.getElementById("listas_creadas")
+    var fragment = document.createDocumentFragment()
+
+    for(i=1;i<array2.length;i++){
+        var contenido = document.createElement("DIV")
+        var imagen = document.createElement("DIV")
+        imagen.id="imagen"
+        var img = document.createElement("IMG")
+        img.src="images/natos.jpg"
+        img.className="imagen_musica"
+        imagen.appendChild(img)
+        var texto = document.createElement("DIV")
+        texto.id="texto"
+        var p = document.createElement("P")
+        p.innerHTML=array2[i]
+        p.className="texto_lista"
+        texto.appendChild(p)
+        contenido.appendChild(imagen)
+        contenido.appendChild(texto)
+        fragment.appendChild(contenido)
+    }
+    lista.appendChild(fragment)
 }
 
 function abrirListasGuardadas(){
@@ -161,7 +202,6 @@ function abrirListasGuardadas(){
 
 }
 function crearListas(){
-    var emailiniciado =sessionStorage.getItem("emailiniciado");
     window.location.href="crearListas.html";
 
 }
@@ -173,6 +213,7 @@ function storeSongs(form){
     let listainiciados = sessionStorage.getItem("lista:"+emailiniciado)
     let lista2 = listainiciados.split(",")
     for(i=0;i< lista2.length;i++){
+        console.log(form.usuario.value)
         if(form.usuario.value === lista2[i]){
             iniciado = true
         }
@@ -194,6 +235,78 @@ function storeSongs(form){
         }
     }
 }
+function verlistascreadas() {
+
+    const songsList = document.getElementById("dayslist")
+    var emailiniciado = sessionStorage.getItem("emailiniciado");
+    let listascreadas = sessionStorage.getItem("lista:" + emailiniciado)
+    let listascreadas2 = listascreadas.split(",")
+
+    const fragment = document.createDocumentFragment()
+    for (i = 1; i < listascreadas2.length; i++) {
+        const itemList = document.createElement("LI")
+        itemList.textContent = listascreadas2[i]
+        itemList.id = "canciones" + i
+        fragment.appendChild(itemList)
+    }
+    songsList.appendChild(fragment)
+    for (i = 1; i < listascreadas2.length; i++) {
+        cont = 0
+        document.getElementById("canciones" + i).onclick = function nombrefuncion() {
+            cont += 1
+            window.location.href="canciones.html"
+            sessionStorage.setItem("listaabierta",document.getElementById("canciones"+cont).textContent)
+        }
+
+    }
+}
+
+function vercancionescreadas(){
+    var listaabierta = sessionStorage.getItem("listaabierta")
+    var canciones = sessionStorage.getItem(listaabierta)
+    let array = canciones.split(",")
+    console.log(array)
+    document.getElementById("nombre_lista").textContent = listaabierta
+
+    const listacancion = document.getElementById("canciones")
+    const fragment = document.createDocumentFragment()
+
+    for(i=1;i<array.length;i=i+2){
+        const itemList = document.createElement("DIV")
+        const imagen = document.createElement("DIV")
+        var img = document.createElement("IMG")
+        img.src= array[i+1]
+        imagen.id="imagen"
+        img.className="imagen_musica"
+        imagen.appendChild(img)
+        const musica = document.createElement("DIV")
+        var audio = document.createElement("AUDIO")
+        audio.setAttribute("src",array[i])
+        audio.setAttribute("controls", "controls");
+        audio.className="audio_musica"
+        musica.id="musica"
+        musica.appendChild(audio)
+        itemList.appendChild(imagen)
+        itemList.appendChild(musica)
+        itemList.id = "cancion"
+        itemList.className ="cancion"
+        fragment.appendChild(itemList)
+    }
+    listacancion.appendChild(fragment)
+
+}
+
+
+function reproducircancion(form){
+    console.log("funciona")
+    sessionStorage.setItem("cancioniniciada",form.canciones.value)
+    window.location.href="cancion.html"
+
+
+
+
+}
+
 
 function contador(){
     const DATE_TARGET = new Date('11/15/2022 0:00 AM');

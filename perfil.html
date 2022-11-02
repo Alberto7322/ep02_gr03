@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="javascript/javascript.js"></script>
 </head>
-<body>
+<body onload="perfil_nuestro()">
     <div class="columna_izquierda">
         <div class="encabezado_izquierda">
             <img src="images/spotify_icon.png" alt="icon" class="imagen3">
@@ -69,23 +69,23 @@
             <h1 class="tipo_musica">Artistas mas escuchados</h1>
             <div class="reggaeton">
                 <div class="imagen">
-                    <div  onclick="abrirperfilartista('Sech','images/sech.jpg');" class="sech">
+                    <div  onclick="abrirperfilartista('Sech','images/sech.jpg','musica/sech.mp3');" class="sech">
                     </div>
                 </div>
                 <div class="imagen">
-                    <div  onclick="abrirperfilartista('Bad Bunny','images/badbunny.jpg');" class="badbunny">
+                    <div  onclick="abrirperfilartista('Bad Bunny','images/badbunny.jpg','musica/badbunny.mp3');" class="badbunny">
                     </div>
                 </div>
                 <div class="imagen">
-                    <div  onclick="abrirperfilartista('Ozuna','images/ozuna.jpg');" class="ozuna">
+                    <div  onclick="abrirperfilartista('Ozuna','images/ozuna.jpg','musica/ozuna.mp3');" class="ozuna">
                     </div>
                 </div>
                 <div class="imagen">
-                        <div  onclick="abrirperfilartista('J Balvin','images/balvin.jpg');" class="balvin">
+                        <div  onclick="abrirperfilartista('J Balvin','images/balvin.jpg','musica/balvin.mp3');" class="balvin">
                         </div>
                 </div>
                  <div class="imagen">
-                    <div  onclick="abrirperfilartista('Nicky Jam','images/nickyjam.jpg');" class="nickyjam">
+                    <div  onclick="abrirperfilartista('Nicky Jam','images/nickyjam.jpg','musica/nickyjam.mp3');" class="nickyjam">
                     </div>
                 </div>
             
@@ -118,30 +118,37 @@
             </div>
             <h1 class="tipo_musica">Canciones favoritas</h1>
             <div class="reggaeton">
-                <div class="imagen">
-                    <div  onclick="abrirperfilartista('nickyjam');" class="sech">
-                    </div>
-                </div>
-                <div class="imagen">
-                    <div  onclick="abrirperfilartista('nickyjam');" class="badbunny">
-                    </div>
-                </div>
-                <div class="imagen">
-                    <div  onclick="abrirperfilartista('nickyjam');" class="ozuna">
-                    </div>
-                </div>
-                <div class="imagen">
-                        <div  onclick="abrirperfilartista('nickyjam');" class="balvin">
-                        </div>
-                </div>
-                 <div class="imagen">
-                    <div  onclick="abrirperfilartista('nickyjam');" class="nickyjam">
-                    </div>
-                </div>
+
             
  
             </div>
-        
+            <h1 class="tipo_musica">Listas creadas</h1>
+            <div class="reggaeton" id="listas_creadas">
+
+
+
+            </div>
+           <h1 class="tipo_musica">Usuarios seguidos</h1>
+            <div class="reggaeton" >
+                <div class="imagen" >
+                    <img src="images/orozco.jpg"class="imagen_musica">
+                </div>
+                <div class="imagen">
+                    <img src="images/orozco.jpg"class="imagen_musica">
+                </div>
+                <div class="imagen">
+                    <img src="images/orozco.jpg"class="imagen_musica">
+                </div>
+                <div class="imagen">
+                    <img src="images/orozco.jpg"class="imagen_musica">
+                </div>
+                <div class="imagen">
+                    <img src="images/orozco.jpg"class="imagen_musica">
+                </div>
+
+
+
+            </div>
         
             
         </div>

@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="javascript/javascript.js"></script>
 </head>
-<body onload="fotoperfil()">
+<body >
     <div class="columna_izquierda">
         <div class="encabezado_izquierda">
             <img src="images/spotify_icon.png" alt="icon" class="imagen3">
@@ -60,18 +60,26 @@
                 <div class="opciones-popup" id="opciones">
                     <form action="#" class="opciones-contenedor">
                       <h1 class="opciones-titulo">Opciones</h1>
-                      <button class="mi-perfil" onclick="location.href='perfil.html'">Mi Perfil</button>
-                      <button class="boton-mis-experiencias" onclick="location.href='cuenta.html'">Mi Cuenta</button>
-                      <button class="cerrar-sesión" onclick="location.href='entrega2.html'">Cerrar Sesión</button>
+                      <button class="mi-perfil" onclick="window.location.href='perfil.html'">Mi Perfil</button>
+                      <button class="boton-mis-experiencias" onclick="window.location.href='cuenta.html'">Mi Cuenta</button>
+                      <button class="cerrar-sesión" onclick="window.location.href='entrega2.html'">Cerrar Sesión</button>
                     </form>
                </div>
             </div>
 
             <div class="buscador">
-                <input
+                <form class="modal-content" method="post" action="#" onsubmit="return reproducircancion(this)">
+                  <div class="container">
+                    <label for="cancion"></label>
+                    <input type="password" placeholder="Introduzca contraseña" name="canciones" required>
+                    <br>
+                    <button type="submit" class="btnsubmit">Buscar</button>
+                  </div>
+                </form>
             </div>
 
         </div>
+
 
         <div class="cuerpo_derecha">
             <h1 class="tipo_musica">Reggaeton</h1>
@@ -80,7 +88,7 @@
                     <div onmouseover="this.className='badbunny2';" onmouseout="this.className='badbunny';" onclick="reproductor();" class="badbunny">
 
                     </div>
-                     
+
                      <p class="texto">Benito Antonio Martínez Ocasio (Almirante Sur, Vega Baja, 10 de marzo de 1994), conocido artísticamente como Bad Bunny</p>
                  </div>
                  <div class="imagen">
@@ -89,7 +97,7 @@
                             <source src="musica/balvin.mp3" >
                         </audio>
                     </div>
-                     
+
                      <p class="texto">José Álvaro Osorio Balvín (Medellín, 7 de mayo de 1985),2​ conocido artísticamente como J Balvin, es un rapero, cantante colombiano</p>
                  </div>
                  <div class="imagen">
@@ -98,7 +106,7 @@
                             <source src="musica/ozuna.mp3" >
                         </audio>
                     </div>
-                     
+
                      <p class="texto">Juan Carlos Ozuna Rosado (San Juan, 13 de marzo de 1992), conocido simplemente como Ozuna, es un cantante y actor puertorriqueño</p>
                  </div>
                  <div class="imagen">
@@ -107,7 +115,7 @@
                             <source src="musica/sech.mp3" >
                         </audio>
                     </div>
-                     
+
                      <p class="texto">Carlos Isaías Morales Williams (Río Abajo, 3 de diciembre de 1993),2​ conocido por Sech, es un cantautor y productor musical panameño de reguetón</p>
                  </div>
                  <div class="imagen">
@@ -116,13 +124,13 @@
                             <source src="musica/nickyjam.mp3" >
                         </audio>
                     </div>
-                     
+
                      <p class="texto">Nick Rivera Caminero (Lawrence, Massachusetts; 17 de marzo de 1981), conocido por su nombre artístico Nicky Jam, es un cantante estadounidense de reguetón y trap​</p>
                  </div>
-            
- 
+
+
             </div>
- 
+
             <h1 class="tipo_musica">Trap</h1>
             <div class="reggaeton">
                 <div class="imagen">
@@ -131,7 +139,7 @@
                            <source src="musica/tiago.mp3" >
                        </audio>
                    </div>
-                    
+
                     <p class="texto">Tiago Uriel Pacheco, mejor conocido por  Tiago PZK nació el 3 de agosto de 2001, en Monte Grande, Buenos Aires, Argentina</p>
                 </div>
                 <div class="imagen">
@@ -140,7 +148,7 @@
                            <source src="musica/nicole.mp3" >
                        </audio>
                    </div>
-                    
+
                     <p class="texto">Nicole Denise Cucco (Rosario, Santa Fe; 25 de agosto de 2000), conocida artísticamente como Nicki Nicole, es una cantante y compositora argentina.</p>
                 </div>
                 <div class="imagen">
@@ -149,7 +157,7 @@
                            <source src="musica/trueno.mp3" >
                        </audio>
                    </div>
-                    
+
                     <p class="texto">Mateo Palacios Corazzina (La Boca, Buenos Aires; 25 de marzo de 2002), más conocido por su nombre artístico Trueno, es un rapero, cantante y freestyler argentino.</p>
                 </div>
                 <div class="imagen">
@@ -158,7 +166,7 @@
                            <source src="musica/duki.mp3" >
                        </audio>
                    </div>
-                    
+
                     <p class="texto">Mauro Ezequiel Lombardo (Almagro, Buenos Aires, 24 de junio de 1996), conocido artísticamente como Duki, es un rapero y compositor argentino</p>
                 </div>
                 <div class="imagen">
@@ -167,10 +175,10 @@
                            <source src="musica/bizarrap.mp3" >
                        </audio>
                    </div>
-                    
+
                     <p class="texto">Gonzalo Julián Conde (Ramos Mejía, área metropolitana de Buenos Aires; 29 de agosto de 1998), conocido artísticamente como Bizarrap (abreviado Biza), es un productor musical argentino</p>
                 </div>
-           
+
             </div>
             <h1 class="tipo_musica">Pop</h1>
             <div class="reggaeton">
@@ -180,7 +188,7 @@
                                <source src="musica/aitana.mp3" >
                            </audio>
                        </div>
-                        
+
                         <p class="texto">Aitana Ocaña Morales (Barcelona, 27 de junio de 1999), más conocido como Aitana, es una cantante y actriz española. </p>
                     </div>
                     <div class="imagen">
@@ -189,7 +197,7 @@
                                <source src="musica/orozco.mp3" >
                            </audio>
                        </div>
-                        
+
                         <p class="texto">Antonio José Orozco Ferrón, conocido simplemente como Antonio Orozco (Hospitalet de Llobregat, Cataluña; 23 de noviembre de 1972) es un cantante y compositor español.</p>
                     </div>
                     <div class="imagen">
@@ -198,7 +206,7 @@
                                <source src="musica/melendi.mp3" >
                            </audio>
                        </div>
-                        
+
                         <p class="texto">Ramón Melendi Espina (Oviedo, 21 de enero de 1979), conocido artísticamente como Melendi, es un cantautor y compositor español de música pop y rumba.​</p>
                     </div>
                     <div class="imagen">
@@ -207,7 +215,7 @@
                                <source src="musica/pablo.mp3" >
                            </audio>
                        </div>
-                        
+
                         <p class="texto">Pablo Moreno de Alborán Ferrándiznota (Málaga, 31 de mayo de 1989)​, conocido artísticamente como Pablo Alborán, es un cantautor y músico español</p>
                     </div>
                     <div class="imagen">
@@ -216,19 +224,18 @@
                                <source src="musica/beret.mp3" >
                            </audio>
                        </div>
-                        
+
                         <p class="texto">Francisco Javier Álvarez Beret, (Sevilla; 2 de julio de 1996), conocido simplemente como Beret, es un cantante español de genero urbano y pop.</p>
                     </div>
-            
-            
+
             </div>
-            
         </div>
+
+        </div>
+
     </div>
     <div class="pie" id="reproductor1">
-        <audio controls autoplay class="reproductor" >
-            <source src="musica/badbunny.mp3" >
-        </audio>
+
     </div>
 
 </body>

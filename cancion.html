@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="javascript/javascript.js"></script>
 </head>
-<body onload="verlistascreadas()">
+<body >
     <div class="columna_izquierda">
         <div class="encabezado_izquierda">
             <img src="images/spotify_icon.png" alt="icon" class="imagen3">
@@ -32,7 +32,7 @@
                         <p class="texto">Crear lista</p>
                     </div>
                 </div>
-                
+
 
             </div>
             <div class="links">
@@ -42,33 +42,50 @@
                 <div class="link">
                     <a href="https://www.spotify.org/" class="Cookies">Cookies</a>
                 </div>
-                
+
             </div>
-            
+
 
         </div>
-            
 
-        
+
+
     </div>
     <div class="columna_derecha">
 
-        <div class="encabezado_derecha" >
-            <img src="a.jpg" class="fotoperfil" id="fotoperfil">
-            <button class="boton-opciones" onclick="abrirListaOpciones()" id="boton-opciones">Opciones</button>
-            <div class="opciones-popup" id="opciones">
-                <form action="#" class="opciones-contenedor">
-                  <h1 class="opciones-titulo">Opciones</h1>
-                  <button class="mi-perfil" onclick="document.location.href='perfil.html'">Mi Perfil</button>
-                  <button class="boton-mis-experiencias" onclick="document.location.href='cuenta.html'">Mi Cuenta</button>
-                  <button class="cerrar-sesión" onclick="document.location.href='entrega2.html'">Cerrar Sesión</button>
-                </form>
-              </div>
+        <div class="encabezado_derecha"  >
+            <div class="encabezado-perfil">
+                <img src="a.jpg" class="fotoperfil" id="fotoperfil">
+                <button class="boton-opciones" onclick="abrirListaOpciones()" id="boton-opciones">Opciones</button>
+                <div class="opciones-popup" id="opciones">
+                    <form action="#" class="opciones-contenedor">
+                      <h1 class="opciones-titulo">Opciones</h1>
+                      <button class="mi-perfil" onclick="location.href='perfil.html'">Mi Perfil</button>
+                      <button class="boton-mis-experiencias" onclick="location.href='cuenta.html'">Mi Cuenta</button>
+                      <button class="cerrar-sesión" onclick="location.href='entrega2.html'">Cerrar Sesión</button>
+                    </form>
+               </div>
+            </div>
+
+            <div class="buscador">
+                    <form class="modal-content" method="post" action="#" onsubmit="reproducircancion(this)">
+                  <div class="container">
+                    <label for="cancion"><b>Canciones</b></label>
+                    <input type="text" multiple placeholder="Canciones" name="canciones" id="busqueda"  required>
+                    <br>
+                  </div>
+                   <div class="clearfix">
+                      <button type="submit" class="signupbtn">Crear Listas</button>
+                    </div>
+            </div>
+
         </div>
+
         <div class="cuerpo_derecha">
-              <ul id="dayslist" > </ul>
+
         </div>
+    <div class="pie" id="reproductor1">
+
     </div>
-    <div class="pie">
-        <p class="texto_pie">Usa la web que viene bien</p>
-    </div>
+
+</body>
