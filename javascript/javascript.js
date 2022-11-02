@@ -282,34 +282,50 @@ function storeSongs(form){
         }
     }
 }
+
+
+
 function verlistascreadas() {
 
     const songsList = document.getElementById("dayslist")
     var emailiniciado = sessionStorage.getItem("emailiniciado");
     let listascreadas = sessionStorage.getItem("lista:" + emailiniciado)
     let listascreadas2 = listascreadas.split(",")
-
+    
+    const principal = document.getElementById("cuerpo_derecha")
     const fragment = document.createDocumentFragment()
-    for (i = 1; i < listascreadas2.length; i++) {
-        const itemList = document.createElement("LI")
-        itemList.textContent = listascreadas2[i]
-        itemList.id = "canciones" + i
-        fragment.appendChild(itemList)
-    }
-    songsList.appendChild(fragment)
-    for (i = 1; i < listascreadas2.length; i++) {
-        cont = 0
-        document.getElementById("canciones" + i).onclick = function nombrefuncion() {
-            cont += 1
-            window.location.href="canciones.html"
-            sessionStorage.setItem("listaabierta",document.getElementById("canciones"+cont).textContent)
-        }
+    console.log(listascreadas2)
 
+    for (i = 1; i < listascreadas2.length; i++) {
+        const div = document.createElement("DIV")
+        const imagen = document.createElement("DIV")
+        var img = document.createElement("IMG")
+        img.src="images/natos.jpg"
+        img.className="imagen"
+        const texto = document.createElement("DIV")
+        var p =document.createElement("P")
+        p.innerHTML=listascreadas2[i]
+        imagen.appendChild(img)
+        texto.appendChild(p)
+        div.appendChild(imagen)
+        div.appendChild(texto)
+
+        div.id="canciones "+i
+        div.onclick=function abrirlistas(){
+            alert("hola")
+            sessionStorage.setItem("listaabierta","manuel")
+            window.location.href="canciones.html"
+        }
+        fragment.appendChild(div)
     }
+    principal.appendChild(fragment)
+
+    
 }
 
 function vercancionescreadas(){
     var listaabierta = sessionStorage.getItem("listaabierta")
+    console.log(listaabierta)
     var canciones = sessionStorage.getItem(listaabierta)
     let array = canciones.split(",")
     console.log(array)
