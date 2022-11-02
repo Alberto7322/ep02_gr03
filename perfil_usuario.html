@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Musica</title>
+<link rel="stylesheet" href="style/entrega1.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="javascript/javascript.js"></script>
+</head>
+<body onload="perfil_usuario()">
+    <div class="columna_izquierda">
+        <div class="encabezado_izquierda">
+            <img src="images/spotify_icon.png" alt="icon" class="imagen3">
+            <div class="titulo">
+                <h1 ><a href="entrega3.html" >UC3Musica</a></h1>
+            </div>
+        </div>
+        <div class="cuerpo_izquierda">
+            <div class="menu">
+                <div class="menu_option" onclick="abrirListasGuardadas()">
+                    <div class="icono">
+                        <img src="images/natos.jpg" alt="cantante1" class="imagen2">
+                    </div>
+                    <div class="texto_menu">
+                        <p class="texto">Listas guardadas</p>
+                    </div>
+                </div>
+                <div class="menu_option" onclick="crearListas()">
+                    <div class="icono">
+                        <img src="images/sech2.jpg" alt="cantante1" class="imagen2">
+                    </div>
+                    <div class="texto_menu">
+                        <p class="texto">Crear lista</p>
+                    </div>
+                </div>
+                
+
+            </div>
+            <div class="links">
+                <div class="link">
+                    <a href="https://www.spotify.org/" class="Política">Política de privacidad</a>
+                </div>
+                <div class="link">
+                    <a href="https://www.spotify.org/" class="Cookies">Cookies</a>
+                </div>
+                
+            </div>
+            
+
+        </div>
+            
+
+        
+    </div>
+    <div class="columna_derecha">
+
+        <div class="encabezado_derecha">
+            <img src="a.jpg" class="fotoperfil" id="fotoperfil">
+            <button class="boton-opciones" onclick="abrirListaOpciones()" id="boton-opciones">Opciones</button>
+            <div class="opciones-popup" id="opciones">
+                <form action="#" class="opciones-contenedor">
+                  <h1 class="opciones-titulo">Opciones</h1>
+                  <button class="mi-perfil" onclick="document.location.href='perfil.html'">Mi Perfil</button>
+                  <button class="boton-mis-experiencias" onclick="document.location.href='cuenta.html'">Mi Cuenta</button>
+                  <button class="cerrar-sesión" onclick="document.location.href='entrega2.html'">Cerrar Sesión</button>
+                </form>
+              </div>
+        </div>
+        <div class="cuerpo_derecha">
+            <h1 class="tipo_musica">Artistas mas escuchados</h1>
+            <div class="reggaeton">
+                <div class="imagen">
+                    <div  onclick="abrirperfilartista('Sech','images/sech.jpg');" class="sech">
+                    </div>
+                </div>
+                <div class="imagen">
+                    <div  onclick="abrirperfilartista('Bad Bunny','images/badbunny.jpg');" class="badbunny">
+                    </div>
+                </div>
+                <div class="imagen">
+                    <div  onclick="abrirperfilartista('Ozuna','images/ozuna.jpg');" class="ozuna">
+                    </div>
+                </div>
+                <div class="imagen">
+                        <div  onclick="abrirperfilartista('J Balvin','images/balvin.jpg');" class="balvin">
+                        </div>
+                </div>
+                 <div class="imagen">
+                    <div  onclick="abrirperfilartista('Nicky Jam','images/nickyjam.jpg');" class="nickyjam">
+                    </div>
+                </div>
+            
+ 
+            </div>
+            <h1 class="tipo_musica">Canciones mas escuchadas</h1>
+            <div class="reggaeton">
+                <div class="imagen">
+                    <div  onclick="abrirperfilartista('Nicky Jam','nickyjam.png');" class="sech">
+                    </div>
+                </div>
+                <div class="imagen">
+                    <div  onclick="abrirperfilartista('nickyjam');" class="badbunny">
+                    </div>
+                </div>
+                <div class="imagen">
+                    <div  onclick="abrirperfilartista('nickyjam');" class="ozuna">
+                    </div>
+                </div>
+                <div class="imagen">
+                        <div  onclick="abrirperfilartista('nickyjam');" class="balvin">
+                        </div>
+                </div>
+                 <div class="imagen">
+                    <div  onclick="abrirperfilartista('Nicky Jam','nickyjam.png');" class="nickyjam">
+                    </div>
+                </div>
+        
+            </div>
+            <h1 class="tipo_musica">Canciones favoritas</h1>
+            <div class="reggaeton">
+                <div class="imagen">
+                    <div  onclick="abrirperfilartista('nickyjam');" class="sech">
+                    </div>
+                </div>
+                <div class="imagen">
+                    <div  onclick="abrirperfilartista('nickyjam');" class="badbunny">
+                    </div>
+                </div>
+                <div class="imagen">
+                    <div  onclick="abrirperfilartista('nickyjam');" class="ozuna">                                           
+                    </div>
+                </div>
+                <div class="imagen">
+                        <div  onclick="abrirperfilartista('nickyjam');" class="balvin">
+                        </div>
+                </div>
+                 <div class="imagen">
+                    <div  onclick="abrirperfilartista('nickyjam');" class="nickyjam">
+                    </div>
+                </div>
+
+
+            </div>
+        
+        
+            
+        </div>
+    </div>
+    <div class="pie">
+        <p class="texto_pie">Usa la web que viene bien</p>
+    </div>
