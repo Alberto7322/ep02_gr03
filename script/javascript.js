@@ -200,7 +200,8 @@ function crearListas(){
 }
 function storeSongs(form){
     let cancionesposible = [{id:"bad bunny",info:"musica/badbunny.mp3,images/badbunny.jpg"},
-        {id:"j balvin",info:"musica/balvin.mp3,images/balvin.jpg"}]
+        {id:"j balvin",info:"musica/balvin.mp3,images/balvin.jpg"},{id:"sech",info:"musica/sech.mp3,images/sech.jpg"},
+         {id:"ozuna",info:"musica/ozuna.mp3,images/ozuna.jpg"},{id:"nickyjam",info:"musica/nickyjam.mp3,images/nickyjam.jpg"}]
     var emailiniciado =sessionStorage.getItem("emailiniciado");
     var iniciado =false
     let listainiciados = sessionStorage.getItem("lista:"+emailiniciado)
@@ -316,7 +317,10 @@ function vercancionescreadas(){
 
 function reproducircancion(form){
      let array = [{id:"Sech",imagen:"images/sech.jpg",musica:"musica/sech.mp3"},
-         {id:"Bad Bunny",imagen:"images/badbunny.jpg",musica:"musica/badbunny.mp3"}]
+         {id:"Bad Bunny",imagen:"images/badbunny.jpg",musica:"musica/badbunny.mp3"},
+         {id:"Trueno",imagen:"images/trueno.jpg",musica:"musica/trueno.mp3"},
+         {id:"Aitana",imagen:"images/aitana.jpg",musica:"musica/aitana.mp3"},
+          {id:"Orozco",imagen:"images/orozco.jpg",musica:"musica/orozco.mp3"}]
     var cancion = form.canciones.value
 
     for(i=0;i<array.length;i++){
