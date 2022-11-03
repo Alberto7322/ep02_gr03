@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <title>Musica</title>
 <link rel="stylesheet" href="style/entrega1.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 <script src="script/javascript.js"></script>
 </head>
 <body onload="abrircancion()">
@@ -54,7 +55,7 @@
     <div class="columna_derecha">
         <div class="encabezado_derecha"  >
             <div class="encabezado-perfil">
-                <img src="a.jpg" class="fotoperfil" id="fotoperfil">
+                <img src="a.jpg" alt= "foto perfil" class="fotoperfil" id="fotoperfil">
                 <button class="boton-opciones" onclick="abrirListaOpciones()" id="boton-opciones">Opciones</button>
                 <div class="opciones-popup" id="opciones">
                     <form action="#" class="opciones-contenedor">
@@ -69,7 +70,7 @@
             <div class="buscador">
                 <form class="modal-content" method="post" action="cancion.html" onsubmit="reproducircancion(this)">
                   <div class="container">
-                    <label for="cancion"></label>
+                    <label id="cancion"></label>
                     <input type="text"  class="buscador_entrada" placeholder="Busca la cancion" name="canciones" required>
                     <button type="submit"  class="btnsubmit2">Buscar</button>
                   </div>

@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <title>Musica</title>
 <link rel="stylesheet" href="style/entrega1.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 <script src="script/javascript.js"></script>
 </head>
 <body>
@@ -55,7 +56,7 @@
 
         <div class="encabezado_derecha"  >
             <div class="encabezado-perfil">
-                <img src="a.jpg" class="fotoperfil" id="fotoperfil">
+                <img src="a.jpg" class="fotoperfil" alt="fotoperfil" id="fotoperfil">
                 <button class="boton-opciones" onclick="abrirListaOpciones()" id="boton-opciones">Opciones</button>
                 <div class="opciones-popup" id="opciones">
                     <form action="#" class="opciones-contenedor">
@@ -70,7 +71,7 @@
             <div class="buscador">
                 <form class="modal-content" method="post" action="cancion.html" onsubmit="reproducircancion(this)">
                   <div class="container">
-                    <label for="cancion"></label>
+                    <label id="cancion_4"></label>
                     <input type="text"  class="buscador_entrada" placeholder="Busca la cancion" name="canciones" required>
                     <button type="submit"  class="btnsubmit2">Buscar</button>
                   </div>
@@ -85,11 +86,11 @@
                     <h1>PlayList</h1>
                     <p>Crear una lista.</p>
                     <hr>
-                    <label for="usuario"><b>Título</b></label>
+                    <label id="usuario"><b>Título</b></label>
                     <input type="text" placeholder="Nombre de la lista" name="usuario" required>
                     <br>
-                    <label for="cancion"><b>Canciones</b></label>
-                    <input type="text" multiple placeholder="Canciones" name="canciones" id="busqueda"  required>
+                    <label id="cancion"><b>Canciones</b></label>
+                    <input type="text" placeholder="Canciones" name="canciones" id="busqueda"  required>
                     <br>
             
                     <div class="clearfix">
