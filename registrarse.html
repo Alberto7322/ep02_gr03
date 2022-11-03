@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
 <title>Musica</title>
 <link rel="stylesheet" href="style/entrega1.css">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
 <script src="script/javascript.js"></script>
 </head>
 <body>
@@ -77,30 +77,30 @@
         </div>
         <div class="cuerpo_derecha">
             <div class="modal" id="id01">
-                <img src="images/google-icon.png" class="iconos">
-                <img src="images/facebook-icon.png" class="iconos">
+                <img src="images/google-icon.png" alt="google" class="iconos">
+                <img src="images/facebook-icon.png" alt="facebook" class="iconos">
                 <form class="modal-content" method="post" action="#" onsubmit="return storeValues(this)">
                   <div class="container">
                     <h1>Sign Up</h1>
                     <p>Por favor rellena este formulario para crear una cuenta.</p>
                     <hr>
-                    <label for="usuario"><b>Nombre de usuario</b></label>
+                    <label id="usuario"><b>Nombre de usuario</b></label>
                     <input type="text" placeholder="Introduzca su nombre de usuario" name="usuario" required>
                     <br>
-                    <label for="psw"><b>Contraseña</b></label>
+                    <label id="psw"><b>Contraseña</b></label>
                     <input type="password" placeholder="Introduzca su contraseña" name="psw" required>
                     <br>
-                    <label for="nombreapellidos"><b>Nombre y Apellidos</b></label>
+                    <label id="nombreapellidos"><b>Nombre y Apellidos</b></label>
                     <input type="text" placeholder="Introduzca su nombre y apellidos" name="nombreapellidos" required>
                     <br>
-                    <label for="email"><b>Email</b></label>
+                    <label id="email"><b>Email</b></label>
                     <input type="email" placeholder="Introduzca su email" name="email" required>
                     <br>
-                    <label for="fechadenacimiento"><b>Fecha de nacimiento</b></label>
-                    <input type="date" placeholder="Introduzca su fecha de nacimiento" name="fechadenacimiento" required>
+                    <label id="fechadenacimiento"><b>Fecha de nacimiento</b></label>
+                    <input type="date"  name="fechadenacimiento" required>
                     <br>
-                    <label for="fotodeperfil"><b>Foto de perfil</b></label>
-                    <input type="file" placeholder="Introduzca una foto de perfil (opcional)" id="fotoinsertada" name="fotodeperfil">
+                    <label id="fotodeperfil"><b>Foto de perfil</b></label>
+                    <input type="file"  id="fotoinsertada" name="fotodeperfil">
                     <br>
                     <label>
                       <input type="checkbox" name="condicionesdeuso" style="margin-bottom:15px" required> He leído y acepto las condiciones de uso

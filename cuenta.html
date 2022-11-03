@@ -56,7 +56,7 @@
     <div class="columna_derecha">
         <div class="encabezado_derecha"  >
             <div class="encabezado-perfil">
-                <img src="a.jpg" class="fotoperfil" id="fotoperfil">
+                <img src="a.jpg" alt="foto perfil" class="fotoperfil" id="fotoperfil">
                 <button class="boton-opciones" onclick="abrirListaOpciones()" id="boton-opciones">Opciones</button>
                 <div class="opciones-popup" id="opciones">
                     <form action="#" class="opciones-contenedor">
@@ -71,7 +71,7 @@
             <div class="buscador">
                 <form class="modal-content" method="post" action="cancion.html" onsubmit="reproducircancion(this)">
                   <div class="container">
-                    <label for="cancion"></label>
+                    <label id="cancion"></label>
                     <input type="text"  class="buscador_entrada" placeholder="Busca la cancion" name="canciones" required>
                     <button type="submit"  class="btnsubmit2">Buscar</button>
                   </div>
@@ -87,20 +87,20 @@
                     <h1>Mi Perfil</h1>
                     <p>Estos son los atributos de su perfil.</p>
                     <hr>
-                    <label for="usuario"><b>Nombre de usuario</b></label>
+                    <label id="usuario"><b>Nombre de usuario</b></label>
                     <input type="text" id="usuariovariable" value="" placeholder="" name="usuario" required>
                     <br>
-                    <label for="psw"><b>Contraseña</b></label>
+                    <label id="psw"><b>Contraseña</b></label>
                     <input type="password" id="contraseñavariable" value="" placeholder="" name="usuario" required>
                     <br>
-                    <label for="nombreapellidos"><b>Nombre y Apellidos</b></label>
+                    <label id="nombreapellidos"><b>Nombre y Apellidos</b></label>
                     <input type="text" id="nombrevariable" value="" placeholder="" name="usuario" required>
                     <br>
-                    <label for="fechadenacimiento"><b>Fecha de nacimiento</b></label>
-                    <input type="date" id="fechavariable" value="" placeholder="" name="usuario" required>
+                    <label id="fechadenacimiento"><b>Fecha de nacimiento</b></label>
+                    <input type="date" id="fechavariable" value="" name="usuario" required>
                     <br>
-                    <label for="fotodeperfil"><b>Foto de perfil</b></label>
-                    <input type="file" placeholder="Introduzca una foto de perfil (opcional)" name="fotodeperfil" id="fotodeperfilcambiada">
+                    <label id="fotodeperfil"><b>Foto de perfil</b></label>
+                    <input type="file"  name="fotodeperfil" id="fotodeperfilcambiada">
                     <br>
                     <div class="clearfix">
                         <button type="reset" class="signupbtn">Borrar</button>
