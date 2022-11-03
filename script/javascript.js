@@ -1,4 +1,4 @@
-
+//función para comprobar las cookies de nuestra aplicación
 function checkCookie(campo) {
     console.log(sessionStorage.getItem(campo))
     if (sessionStorage.getItem(campo) == null) {    
@@ -7,7 +7,7 @@ function checkCookie(campo) {
         return false;
     }
 }
-
+//función para almacenar los distintos valores de las cuentas creadas
 function storeValues(form){
     console.log(form.email.value)
     if (checkCookie(form.email.value)){
@@ -22,6 +22,7 @@ function storeValues(form){
         return false;
     }
 }
+//función para polder pasar serializar arrays 
 function serializarArray(formulario){
     var strFormulario = "";
     for (var i=0; i<formulario.length; i++){
@@ -33,6 +34,7 @@ function serializarArray(formulario){
 var emailiniciado = "";
 var expiniciado = "";
 
+//función para comprobar que los datos utilizados son correctos
 function validarDatos(form){
     var email = form.email.value;
     var psw = form.psw.value;
@@ -57,6 +59,7 @@ function validarDatos(form){
         return false;
     }
 }
+//Comprueba que la contraseña introducida es la correcta para ese email
 function checkPassword(email, psw){
     let cookie = sessionStorage.getItem(email);
     let array = cookie.split(",");
@@ -66,10 +69,11 @@ function checkPassword(email, psw){
         return false;
     }
 }
+
 function abrirListaOpciones(){
     document.getElementById("opciones").style.display = "block";
 }
-
+//función para actualizar los distintos valores
 function actualizarValues(form){
     var emailiniciado =sessionStorage.getItem("emailiniciado")
     let array = [form.usuariovariable.value, form.contraseñavariable.value, form.nombrevariable.value, emailiniciado,form.fechavariable.value];
@@ -77,7 +81,7 @@ function actualizarValues(form){
     sessionStorage.setItem(emailiniciado, strForm, 30);
     console.log(emailiniciado)
 }
-
+//con abrirperfilartista y perfil_artista damos acceso a las páginas de los distintos artistas de nuestra aplicacion
 function abrirperfilartista(artista,url,mp3){
     window.location.href="perfil_artista.html"
     let array = [artista,url,mp3]
@@ -114,7 +118,7 @@ function perfil_artista(){
     canciones.appendChild(fragment)
 
 }
-
+//Al igual que con los artistas pero con los distintos usuarios que seguimos en nuestro perfil
 function abrirperfilusuario(usuario,url){
     window.location.href="perfil_usuario.html"
     let array = [artista,url]
@@ -130,6 +134,7 @@ function perfil_usuario(){
 
 }
 
+//Igual que las anteriores pero esta vez para el perfild del propio usuario
 function perfil_nuestro(){
     var emailiniciado=sessionStorage.getItem("emailiniciado")
     var array1 = sessionStorage.getItem("lista:"+emailiniciado)
@@ -189,15 +194,19 @@ function perfil_nuestro(){
     favoritas.appendChild(fragment2)
 
 }
-
+//Nos sirve para abrir las listas de canciones que tenemos guardadas
 function abrirListasGuardadas(){
     window.location.href="lista_canciones.html";
 
 }
+
+//Función para crear las listas de canciones que queremos guardar
 function crearListas(){
     window.location.href="crearListas.html";
 
 }
+
+//función para guardar las distintas canciones
 function storeSongs(form){
     let cancionesposible = [{id:"bad bunny",info:"musica/badbunny.mp3,images/badbunny.jpg"},
         {id:"j balvin",info:"musica/balvin.mp3,images/balvin.jpg"},{id:"sech",info:"musica/sech.mp3,images/sech.jpg"},
@@ -231,7 +240,7 @@ function storeSongs(form){
 }
 
 
-
+//función para poder visitar las listas que hemos creado anteriormente
 function verlistascreadas() {
 
     const songsList = document.getElementById("dayslist")
@@ -272,6 +281,7 @@ function verlistascreadas() {
     
 }
 
+//Mismo uso que la función anterior a diferencia que esta es para las canciones
 function vercancionescreadas(){
     var listaabierta = sessionStorage.getItem("listaabierta")
     var canciones = sessionStorage.getItem(listaabierta)
@@ -336,7 +346,7 @@ function vercancionescreadas(){
 
 }
 
-
+//función que nos permite reproducir las canciones correspondientes con sus artistas
 function reproducircancion(form){
      let array = [{id:"Sech",imagen:"images/sech.jpg",musica:"musica/sech.mp3"},
          {id:"Bad Bunny",imagen:"images/badbunny.jpg",musica:"musica/badbunny.mp3"},
@@ -355,6 +365,7 @@ function reproducircancion(form){
     }
 
 }
+//función para que aparezca el reproductor en el pie de la página
 function reproductor(link){
     console.log("funciona")
     const pie = document.getElementById("reproductor1")
@@ -374,6 +385,7 @@ function reproductor(link){
 
 }
 
+//función para abrir las distintas canciones que se encuentran almacenadas
 function abrircancion(){
     var lista = sessionStorage.getItem("cancioniniciada")
     var lista2 = lista.split(",")
@@ -435,7 +447,7 @@ function pincharcancion(titulo,url,musica){
 }
 
 
-
+//función para que podamos poner contadores en tiempo real
 function contador(){
     const DATE_TARGET = new Date('11/15/2022 0:00 AM');
     const DATE_TARGET2 = new Date('11/18/2022 0:00 AM');
