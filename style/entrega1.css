@@ -522,7 +522,10 @@ img:hover {
         
     }
     
-    
+    .encabezado-perfil{
+        margin-right: 50px;
+    }
+
 
     
 }
@@ -546,6 +549,11 @@ img:hover {
     .encabezado_izquierda{
         width:45%;
     }
+    .container{
+        height: 70%;
+        width: 70%;
+    }    
+
     
     
 }
