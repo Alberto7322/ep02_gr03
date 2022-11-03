@@ -458,6 +458,12 @@ function abrircancion(){
     principal.appendChild(fragment)
 }
 
+function pincharcancion(titulo,url,musica){
+    sessionStorage.setItem("cancioniniciada",titulo+","+url+","+musica)
+    window.location.href="cancion.html"
+
+}
+
 
 
 function contador(){
