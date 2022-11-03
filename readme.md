@@ -5,3 +5,4 @@ En el buscador del encabezado derecha:solo se puede buscar Sech,Bad Bunny,Trueno
 , a su vez en el buscador para añadir una cancion a la playlist las opciones que
 tendremos serán bad bunny,sech,ozuna,nickyjam,j balvin.
 Las opciones que se abren en el menu de arriba a la derecha, algunas veces hay que darles dos veces para que cargen.
+Hay que empezar ejecutando el archivo html entrega2.html en el cual se inciara sesion o te registraras
