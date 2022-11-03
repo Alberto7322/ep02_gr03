@@ -1,10 +1,4 @@
-function openBotonOpciones(){
-    document.getElementById('boton-opciones').style.display = "block";
-}
 
-function closeBotonOpciones(){
-    document.getElementById('boton-opciones').style.display = "none";
-}
 function checkCookie(campo) {
     console.log(sessionStorage.getItem(campo))
     if (sessionStorage.getItem(campo) == null) {    
@@ -76,18 +70,6 @@ function abrirListaOpciones(){
     document.getElementById("opciones").style.display = "block";
 }
 
-function cerrarListaOpciones(){
-    document.getElementById("opciones").style.display = "none";
-}
-function abrirOpcionesCerrarSesion(){
-    document.getElementById("opciones").style.display = "none";
-    document.getElementById("opciones-cerrar-sesión").style.display = "block";
-}
-
-function cerrarOpcionesCerrarSesion(){
-    document.getElementById("opciones-cerrar-sesión").style.display = "none";
-    document.getElementById("opciones").style.display = "block";
-}
 function actualizarValues(form){
     var emailiniciado =sessionStorage.getItem("emailiniciado")
     let array = [form.usuariovariable.value, form.contraseñavariable.value, form.nombrevariable.value, emailiniciado,form.fechavariable.value];
@@ -95,45 +77,7 @@ function actualizarValues(form){
     sessionStorage.setItem(emailiniciado, strForm, 30);
     console.log(emailiniciado)
 }
-function getNombreUsuario(){
-    var emailiniciado =sessionStorage.getItem("emailiniciado")
-    let cookie = sessionStorage.getItem(emailiniciado);
-    let array = cookie.split(",");
-    var usuario = array[0];
-    return usuario
-}
 
-function getContraseña(){
-    var emailiniciado =sessionStorage.getItem("emailiniciado")
-    let cookie = sessionStorage.getItem(emailiniciado);
-    let array = cookie.split(",");
-    var contraseña = array[1];
-    return contraseña
-}
-
-function getFechaDeNacimiento(){
-    var emailiniciado =sessionStorage.getItem("emailiniciado")
-    let cookie = sessionStorage.getItem(emailiniciado);
-    let array = cookie.split(",");
-    let fechadenacimiento = array[4];
-    return fechadenacimiento
-}
-
-function getNombreApellidos(){
-    var emailiniciado =sessionStorage.getItem("emailiniciado")
-    let cookie = sessionStorage.getItem(emailiniciado);
-    let array = cookie.split(",");
-    let nombreapellidos = array[2];
-    return nombreapellidos
-}
-
-function getStringFotoInsertada(){
-    var emailiniciado =sessionStorage.getItem("emailiniciado")
-    let cookie = sessionStorage.getItem(emailiniciado);
-    let array = cookie.split(",");
-    let stringfoto = array[5];
-    return stringfoto
-} 
 function abrirperfilartista(artista,url,mp3){
     window.location.href="perfil_artista.html"
     let array = [artista,url,mp3]
