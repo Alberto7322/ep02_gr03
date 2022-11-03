@@ -311,6 +311,28 @@ function vercancionescreadas(){
         fragment.appendChild(itemList)
     }
     listacancion.appendChild(fragment)
+    var boton =document.createElement("DIV")
+    var boton_simbolo = document.createElement("BUTTON")
+    boton_simbolo.className="boton_borrar"
+    boton_simbolo.innerHTML="Borrar"
+    boton_simbolo.onclick=function(){
+        sessionStorage.removeItem(listaabierta)
+        var emailiniciado=sessionStorage.getItem("emailiniciado")
+        var borradas=sessionStorage.getItem("lista:"+emailiniciado)
+        var borrar=borradas.split(",")
+        let lista_nueva=""
+        for(i=0;i<borrar.length;i++){
+            if(borrar[i] !== listaabierta){
+                lista_nueva += borrar[i]
+            }
+        }
+        sessionStorage.setItem("lista:"+emailiniciado,lista_nueva)
+        window.location.href="lista_canciones.html"
+        }
+    boton_simbolo.id="boton_simbolo"
+    boton.appendChild(boton_simbolo)
+    listacancion.appendChild(boton)
+
 
 }
 
